@@ -9,6 +9,7 @@ TagManager:
   - game_manager
   - mushroom
   - platform
+  - spore
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - Player
   - Mushroom
-  - 
+  - Platform
   - 
   - 
   - 
