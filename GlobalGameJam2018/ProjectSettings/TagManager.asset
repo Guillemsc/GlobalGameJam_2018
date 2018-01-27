@@ -11,6 +11,7 @@ TagManager:
   - platform
   - spore
   - player_mushroom
+  - ground_detect
   layers:
   - Default
   - TransparentFX
