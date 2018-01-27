@@ -74,8 +74,6 @@ public class GameManager : MonoBehaviour
 
             if(curr.GetLevelNum() == level)
             {
-                curr_lvl = level;
-
                 if (curr_level != null)
                 {
                     Destroy(curr_level);
@@ -85,6 +83,8 @@ public class GameManager : MonoBehaviour
                 {
                     Destroy(curr_player);
                 }
+
+                curr_lvl = level;
 
                 camera.transform.position = new Vector3(curr.GetCameraPos().x, curr.GetCameraPos().y, camera.transform.position.z);
 
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        LoadLevel(curr_lvl++);
+        LoadLevel(++curr_lvl);
     }
 
     public void ReplayLevel()
