@@ -183,14 +183,14 @@ public class MushroomCanon : MonoBehaviour
                 rb.AddForce(canon_pivot.transform.up * player_shoot_force);
                 audio.Play();
             }
-
-            to_shoot = null;
         }
+
+        to_shoot = null;
     }
 
     public void SetToShoot(GameObject go)
     {
-        if(to_shoot == null && state == MushroomCanonState.MC_SUCK)
+        if(to_shoot == null && go.tag == "player" && state == MushroomCanonState.MC_SUCK)
         {
             to_shoot = go;
 
@@ -224,5 +224,10 @@ public class MushroomCanon : MonoBehaviour
         }
 
         return ret;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        SetToShoot(collision.gameObject);
     }
 }

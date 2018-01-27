@@ -210,18 +210,6 @@ public class PlayerControl : MonoBehaviour
         {
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, -max_fall_velocity);
         }
-
-        if(rigid_body.velocity.y > 0)
-        {
-            //if (Mathf.Abs(rigid_body.velocity.x) > max_jump_sides_velocity)
-            //{
-            //    if (rigid_body.velocity.x > 0)
-            //        rigid_body.velocity = new Vector2(max_jump_sides_velocity, rigid_body.velocity.y);
-
-            //    if (rigid_body.velocity.x < 0)
-            //        rigid_body.velocity = new Vector2(-max_jump_sides_velocity, rigid_body.velocity.y);
-            //}
-        }
     }
 
     private void LookForMushroom()

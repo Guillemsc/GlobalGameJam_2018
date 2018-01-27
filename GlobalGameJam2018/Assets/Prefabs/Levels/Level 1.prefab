@@ -156,9 +156,9 @@ GameObject:
   - component: {fileID: 114791025112050206}
   - component: {fileID: 212750463490616188}
   - component: {fileID: 61370937899902198}
-  - component: {fileID: 251163158705845544}
   - component: {fileID: 50807803637546086}
   - component: {fileID: 82945055038960668}
+  - component: {fileID: 251053994365132122}
   m_Layer: 9
   m_Name: MushroomCanon
   m_TagString: mushroom
@@ -501,7 +501,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307905080406330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23357373, y: 1.3213166, z: 0.051757812}
+  m_LocalPosition: {x: -2.9889793, y: -0.35039866, z: 0.051757812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4513763964403636}
@@ -524,7 +524,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1669799149048216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.086, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4911358401177592}
@@ -894,7 +894,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.04}
+  m_Offset: {x: 0, y: -0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -905,7 +905,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.24}
+  m_Size: {x: 0.24, y: 0.18}
   m_EdgeRadius: 0
 --- !u!61 &61384259227114872
 BoxCollider2D:
@@ -1005,7 +1005,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.31, y: 0.32}
+  m_Size: {x: 0.07, y: 0.32}
   m_EdgeRadius: 0
 --- !u!61 &61592222575848040
 BoxCollider2D:
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82548055d3af9d4ca626b8b03e8c2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 0
+  force: 3000
   check: 0
 --- !u!114 &114214744668585508
 MonoBehaviour:
@@ -1471,9 +1471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spore_shoot_force: 2000
-  player_shoot_force: 2000
-  rotation_speed: 0.2
+  spore_shoot_force: 60
+  player_shoot_force: 6000
+  rotation_speed: 2
   canon_pivot: {fileID: 1039824137186006}
 --- !u!114 &114829034444566988
 MonoBehaviour:
@@ -1497,8 +1497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c3c40fc23aa154bb0edc4d55ed2706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_foce: 100
-  deforce: 10
+  max_foce: 1150
+  deforce: 1500
   blow_time: 8
   recharge_time: 2
   spore_force: 0.4
@@ -2134,7 +2134,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!251 &251163158705845544
+--- !u!251 &251053994365132122
 PlatformEffector2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2148,9 +2148,9 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 91.32
+  m_SurfaceArc: 116.22
   m_UseSideFriction: 0
-  m_UseSideBounce: 1
+  m_UseSideBounce: 0
   m_SideArc: 1
 --- !u!251 &251387080752872818
 PlatformEffector2D:

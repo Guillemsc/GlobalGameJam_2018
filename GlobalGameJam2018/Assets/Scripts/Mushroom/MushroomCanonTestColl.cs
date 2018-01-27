@@ -9,9 +9,15 @@ public class MushroomCanonTestColl : MonoBehaviour
     {
         MushroomCanon mc = gameObject.GetComponentInParent<MushroomCanon>();
 
-        Debug.Log("hi");
-
         if (mc != null)
             mc.SetToShoot(collision.gameObject);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        MushroomCanon mc = gameObject.GetComponentInParent<MushroomCanon>();
+
+        if (mc != null)
+            mc.SetToShoot(other.gameObject);
     }
 }

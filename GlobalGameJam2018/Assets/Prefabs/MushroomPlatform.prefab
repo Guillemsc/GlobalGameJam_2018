@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106713930654300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1365151, y: -11.638376, z: 0.08966131}
+  m_LocalPosition: {x: -1.8058702, y: -0.20878184, z: 0.08966131}
   m_LocalScale: {x: 1, y: 1, z: 0.3}
   m_Children:
   - {fileID: 4508900280498724}
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.39}
+  m_Offset: {x: 0, y: 0.38}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -144,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.43, y: 0.46}
+  m_Size: {x: 0.1, y: 0.46}
   m_EdgeRadius: 0
 --- !u!114 &114298504643461044
 MonoBehaviour:
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  max_fall_vel: 5
+  max_fall_vel: 0.3
   max_x_velocity: 5
   spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
     type: 2}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82548055d3af9d4ca626b8b03e8c2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 1000
+  force: 3000
   check: 0
 --- !u!114 &114813281778483756
 MonoBehaviour:
