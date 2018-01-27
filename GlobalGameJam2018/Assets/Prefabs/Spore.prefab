@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_fall_velocity: 0.2
+  max_x_velocity: 3
 --- !u!212 &212944392079395082
 SpriteRenderer:
   m_ObjectHideFlags: 1

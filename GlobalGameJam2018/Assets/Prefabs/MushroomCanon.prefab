@@ -228,6 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
+    type: 2}
 --- !u!114 &114261896461372244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,8 +244,6 @@ MonoBehaviour:
   shoot_force: 0
   rotation_speed: 0.2
   canon_pivot: {fileID: 1814603413104662}
-  state: 2
-  rotation_dir: 0
 --- !u!212 &212342410470876000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -18,7 +18,6 @@ public class MushroomCanon : MonoBehaviour
     }
 
     Mushroom mush = null;
-    GameObject spore = null;
 
     [SerializeField] float shoot_force;
     [SerializeField] float rotation_speed = 0.2f;
@@ -42,6 +41,7 @@ public class MushroomCanon : MonoBehaviour
     private void Awake()
     {
         mush = gameObject.GetComponent<Mushroom>();
+
     }
 
     private void Start()
@@ -59,12 +59,12 @@ public class MushroomCanon : MonoBehaviour
             state = MushroomCanonState.MC_ROTATE;
 
             rotation_dir = GetRandomRotDir();
-            ia_rotation_speed = Random.Range(0.1f, 0.5f);
+            ia_rotation_speed = Random.Range(0.1f, 0.7f);
         }
 
         if(rotation_timer.GetTime() > rotation_time && state == MushroomCanonState.MC_ROTATE)
         {
-            //Shoot();
+            Shoot();
 
             shoot_timer.Start();
             state = MushroomCanonState.MC_SHOOT;
@@ -143,9 +143,12 @@ public class MushroomCanon : MonoBehaviour
     {
         Rigidbody2D rb = null;
 
-        if (to_shoot == null && spore != null)
+        GameObject sp = null;
+
+        if (to_shoot == null)
         {
-            rb = spore.GetComponent<Rigidbody2D>();
+            sp = Instantiate(mush.spore_prefab, transform.position, Quaternion.identity);
+            rb = sp.GetComponent<Rigidbody2D>();
         }
         else
         {
@@ -181,11 +184,11 @@ public class MushroomCanon : MonoBehaviour
             ret = MushromCanonDirection.MS_RIGHT;
         }
 
-        if (canon_pivot.transform.rotation.eulerAngles.z > 270)
+        if (canon_pivot.transform.rotation.eulerAngles.z > 340)
         {
             ret = MushromCanonDirection.MC_LEFT;
         }
-        else if (canon_pivot.transform.rotation.eulerAngles.z > 45)
+        else if (canon_pivot.transform.rotation.eulerAngles.z > 20)
         {
             ret = MushromCanonDirection.MS_RIGHT;
         }

@@ -433,6 +433,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114169357698629978, guid: 396307f34d67b26429edd29648207e7a,
+        type: 2}
+      propertyPath: spore_force
+      value: 1250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 396307f34d67b26429edd29648207e7a, type: 2}
   m_IsPrefabParent: 0
@@ -595,6 +600,11 @@ Prefab:
     - target: {fileID: 4465513729730258, guid: 89f673a112641594dbf442aee2ca971a, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114261896461372244, guid: 89f673a112641594dbf442aee2ca971a,
+        type: 2}
+      propertyPath: shoot_force
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89f673a112641594dbf442aee2ca971a, type: 2}
