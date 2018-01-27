@@ -8,6 +8,8 @@ public class Mushroom : MonoBehaviour
     {
         MT_PLATFORM,
         MT_WIND,
+        MT_CANON,
+        MT_STAR,
     }
 
     [SerializeField] private MushroomType type;
@@ -32,7 +34,7 @@ public class Mushroom : MonoBehaviour
         SetDynamic();
     }
 
-    private MushroomType GetMushroomType()
+    public MushroomType GetMushroomType()
     {
         return type;
     }
