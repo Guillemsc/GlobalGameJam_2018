@@ -4,21 +4,47 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject[] levels;
+    [SerializeField] private GameObject player;
+
+    GameObject curr_level = null;
+    GameObject curr_player = null;
 
     private void Awake()
     {
-        
+
     }
 
-    // Use this for initialization
-    void Start ()
+    private void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        LoadLevel(0);
+    }
+
+    public void LoadLevel(int level)
     {
-		
-	}
+        for (int i = 0; i < levels.Length; ++i)
+        {
+            Level curr = levels[i].GetComponent<Level>();
+
+            if(curr.GetLevelNum() == level)
+            {
+                if(curr_level != null)
+                {
+                    Destroy(curr_level);
+                }
+
+                if(player != null)
+                {
+                    Destroy(curr_player);
+                }
+
+                curr_level = Instantiate(curr.gameObject, transform.position, Quaternion.identity);
+
+                Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
+                curr_player = Instantiate(player, player_spawn, Quaternion.identity);
+
+                break;
+            }
+        }
+    }
 }
