@@ -96,12 +96,12 @@ public class PlayerControl : MonoBehaviour
                 audio.Play();
             }
 
-            if (Input.GetKeyDown("w"))
+            if (Input.GetKeyDown("w") || Input.GetAxis("Vertical")>0)
             {
                 Jump();
             }
 
-            if (Input.GetKeyDown("j"))
+            if (Input.GetKeyDown("j")|| Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 LookForMushroom();
             }
@@ -125,7 +125,7 @@ public class PlayerControl : MonoBehaviour
     {
         if(alive)
         {
-            if (Input.GetKey("a"))
+            if (Input.GetKey("a") || Input.GetAxis("Horizontal") < 0)
             {
                 MoveLeft();
 
@@ -136,7 +136,7 @@ public class PlayerControl : MonoBehaviour
                 rigid_body.AddForce(new Vector2(break_force, 0));
             }
 
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") || Input.GetAxis("Horizontal") > 0)
             {
                 MoveRight();
 
