@@ -4,17 +4,5 @@ using UnityEngine;
 
 public class MushroomStarTestColl : MonoBehaviour {
 
-    MushroomStar ms = null;
-
-	// Use this for initialization
-	void Start ()
-    {
-        ms = gameObject.GetComponentInParent<MushroomStar>();
-	}
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "player")
-            ms.setCheck(true);
-    }
+ 
 }
