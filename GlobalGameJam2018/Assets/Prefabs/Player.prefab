@@ -167,6 +167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audios: []
+  time_alive_in_head: 5
+  blow_prefab: {fileID: 1752508934572642, guid: 396307f34d67b26429edd29648207e7a,
+    type: 2}
+  canon_prefab: {fileID: 1329403431846070, guid: 89f673a112641594dbf442aee2ca971a,
+    type: 2}
+  platform_prefab: {fileID: 1106713930654300, guid: c855838c1a1636444bbbdca343dc94a6,
+    type: 2}
+  alive: 1
 --- !u!212 &212008071662372506
 SpriteRenderer:
   m_ObjectHideFlags: 1
