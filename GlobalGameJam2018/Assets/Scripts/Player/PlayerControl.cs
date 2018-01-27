@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private float acceleration = 500f;
-    private float jump_foce = 70.1f;
+    [SerializeField] private float acceleration = 500f;
+    [SerializeField] private float jump_foce = 70.1f;
 
-    private float max_fall_velocity = 4.0f;
-    private float max_sides_velocity = 1.5f;
+    [SerializeField] private float max_fall_velocity = 4.0f;
+    [SerializeField] private float max_sides_velocity = 1.5f;
+    [SerializeField] private float max_jump_sides_velocity = 1.5f;
 
     private bool can_jump = false;
 
@@ -70,10 +71,7 @@ public class PlayerControl : MonoBehaviour
                 alive = false;
             }
         }
-    }
 
-    private void FixedUpdate ()
-    {
         if (alive)
         {
             if (bird_singing.GetTime() > random_sing)
@@ -87,16 +85,6 @@ public class PlayerControl : MonoBehaviour
                 audio.Play();
             }
 
-            if (Input.GetKey("a"))
-            {
-                MoveLeft();
-            }
-
-            if (Input.GetKey("d"))
-            {
-                MoveRight();
-            }
-
             if (Input.GetKeyDown("w"))
             {
                 Jump();
@@ -105,6 +93,22 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKeyDown("j"))
             {
                 LookForMushroom();
+            }
+        }
+    }
+
+    private void FixedUpdate ()
+    {
+        if(alive)
+        {
+            if (Input.GetKey("a"))
+            {
+                MoveLeft();
+            }
+
+            if (Input.GetKey("d"))
+            {
+                MoveRight();
             }
 
             Cap();
@@ -156,6 +160,18 @@ public class PlayerControl : MonoBehaviour
         if(rigid_body.velocity.y < 0 && Mathf.Abs(rigid_body.velocity.y) > max_fall_velocity)
         {
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, -max_fall_velocity);
+        }
+
+        if(rigid_body.velocity.y > 0)
+        {
+            if (Mathf.Abs(rigid_body.velocity.x) > max_jump_sides_velocity)
+            {
+                if (rigid_body.velocity.x > 0)
+                    rigid_body.velocity = new Vector2(max_jump_sides_velocity, rigid_body.velocity.y);
+
+                if (rigid_body.velocity.x < 0)
+                    rigid_body.velocity = new Vector2(-max_jump_sides_velocity, rigid_body.velocity.y);
+            }
         }
     }
 

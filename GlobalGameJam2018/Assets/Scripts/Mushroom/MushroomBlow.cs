@@ -7,7 +7,7 @@ public class MushroomBlow : MonoBehaviour
     [SerializeField] private float max_foce = 100;
     [SerializeField] private float deforce = 10;
 
-    [SerializeField] private float blow_time = 6.0f;
+    [SerializeField] private float blow_time = 8.0f;
     [SerializeField] private float recharge_time = 2.0f;
 
     [SerializeField] private float spore_force = 0.4f;
