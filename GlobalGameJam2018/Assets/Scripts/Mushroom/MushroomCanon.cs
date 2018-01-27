@@ -199,8 +199,6 @@ public class MushroomCanon : MonoBehaviour
             ret = MushromCanonDirection.MS_RIGHT;
         }
 
-        Debug.Log(canon_pivot.transform.rotation.eulerAngles.z);
-
         if (canon_pivot.transform.rotation.eulerAngles.z < 340 && canon_pivot.transform.rotation.eulerAngles.z > 180)
         {
             ret = MushromCanonDirection.MC_LEFT;

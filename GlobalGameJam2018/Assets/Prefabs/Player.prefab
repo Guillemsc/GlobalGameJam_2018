@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114408148231503618}
   - component: {fileID: 70385455151413018}
   - component: {fileID: 50860494561824298}
+  - component: {fileID: 82934401955209752}
   m_Layer: 8
   m_Name: Player
   m_TagString: player
@@ -138,6 +139,86 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.22, y: 0.33}
   m_Direction: 0
+--- !u!82 &82934401955209752
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701156295415486}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95331906449682504
 Animator:
   serializedVersion: 3
@@ -166,7 +247,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b298251d77930fe43adaf2df4bb5400e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audios: []
+  audios:
+  - {fileID: 8300000, guid: 6cff49c9811f56243bf8ac12f9c8b957, type: 3}
+  - {fileID: 8300000, guid: 4e4917c66b4a4a84396a70032e408a13, type: 3}
+  - {fileID: 8300000, guid: 9acc403c1a48fd84e93bca72a3cfa58a, type: 3}
+  - {fileID: 8300000, guid: ecd653c3b6c98554ca2b308212ae4c55, type: 3}
+  - {fileID: 8300000, guid: c5413ff03c17ce44ca3957b2f36ab501, type: 3}
+  time_alive_in_head: 5
+  blow_prefab: {fileID: 1752508934572642, guid: 396307f34d67b26429edd29648207e7a,
+    type: 2}
+  canon_prefab: {fileID: 1329403431846070, guid: 89f673a112641594dbf442aee2ca971a,
+    type: 2}
+  platform_prefab: {fileID: 1106713930654300, guid: c855838c1a1636444bbbdca343dc94a6,
+    type: 2}
+  alive: 1
 --- !u!212 &212008071662372506
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -200,7 +294,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 8
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -244,7 +338,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: cedef17e76a537b47a331903aa59a8d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
