@@ -260,7 +260,7 @@ MonoBehaviour:
   deforce: 100
   blow_time: 6
   recharge_time: 2
-  spore_force: 1250
+  spore_force: 0
   curr_state: 1
 --- !u!114 &114390392203975014
 MonoBehaviour:

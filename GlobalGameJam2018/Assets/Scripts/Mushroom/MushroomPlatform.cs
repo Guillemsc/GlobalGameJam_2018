@@ -36,8 +36,6 @@ public class MushroomPlatform : MonoBehaviour
         {
             Vector2 jump = gameObject.transform.up * force;
             rb.AddForce(jump);
-
-            Debug.Log(jump);
         }
     }
 }

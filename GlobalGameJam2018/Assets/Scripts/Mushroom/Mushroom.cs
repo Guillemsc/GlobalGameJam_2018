@@ -55,7 +55,7 @@ public class Mushroom : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "platform")
+        if(collision.gameObject.tag == "platform" || collision.gameObject.tag == "platform")
         {
             SetStatic();
         }
