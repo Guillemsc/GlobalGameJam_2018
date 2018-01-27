@@ -45,11 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 106
-=======
   controlID: 113
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -329,26 +325,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Art/Player
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Art/Player
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GlobalGameJam_2018\GlobalGameJam2018
   m_IsLocked: 0
   m_FolderTreeState:
-<<<<<<< HEAD
-    scrollPos: {x: 0, y: 84}
-    m_SelectedIDs: 50280000
-    m_LastClickedID: 10320
-    m_ExpandedIDs: 0000000058270000b2280000fa280000362900004029000000ca9a3bffffff7f
-=======
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c02c0000
-    m_LastClickedID: 11456
-    m_ExpandedIDs: 000000009e2b0000822c0000ba2c0000e82c0000f22c000000ca9a3bffffff7f
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
+    m_SelectedIDs: 922d0000
+    m_LastClickedID: 11666
+    m_ExpandedIDs: 00000000b62c0000922d0000bc2d0000de2d0000e42d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -376,11 +365,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-<<<<<<< HEAD
-    m_ExpandedIDs: 0000000058270000b2280000fa2800003629000040290000
-=======
-    m_ExpandedIDs: 000000009e2b0000822c0000ba2c0000e82c0000f22c0000
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
+    m_ExpandedIDs: 00000000b62c0000922d0000bc2d0000de2d0000e42d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -405,13 +390,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: 8afbffff
-    m_LastClickedInstanceID: -1142
-=======
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -429,7 +409,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -501,15 +481,9 @@ MonoBehaviour:
     height: 552
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 08d0ffff8cfbffffa6fbffff00000000
-=======
-    m_SelectedIDs: c82b0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 36f0ffff00000000
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
+    m_ExpandedIDs: e4c1fdff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -525,7 +499,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
   - Scene_1
@@ -564,15 +538,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: 0.13607983, y: -2.9279003, z: 0.18139453}
+    m_Target: {x: 2.3011334, y: -2.6342301, z: 0.059049364}
     speed: 2
-    m_Value: {x: 0.13607983, y: -2.9279003, z: 0.18139453}
-=======
-    m_Target: {x: 2.8686376, y: -2.0363076, z: 0.023437142}
-    speed: 2
-    m_Value: {x: 2.8686376, y: -2.0363076, z: 0.023437142}
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
+    m_Value: {x: 2.3011334, y: -2.6342301, z: 0.059049364}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -599,15 +567,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-<<<<<<< HEAD
-    m_Target: 3.7996833
+    m_Target: 4.1532755
     speed: 2
-    m_Value: 3.7996833
-=======
-    m_Target: 7.674018
-    speed: 2
-    m_Value: 7.674018
->>>>>>> 788a48d84adcf462f555ee417727a3f48398071e
+    m_Value: 4.1532755
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -648,13 +610,13 @@ MonoBehaviour:
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -574
-    m_HBaseRangeMax: 574
+    m_HBaseRangeMin: -475.55557
+    m_HBaseRangeMax: 475.55557
     m_VBaseRangeMin: -267.5
     m_VBaseRangeMax: 267.5
     m_HAllowExceedBaseRangeMin: 1
