@@ -177,9 +177,9 @@ public class MushroomCanon : MonoBehaviour
                 rb.AddForce(canon_pivot.transform.up * player_shoot_force);
                 audio.Play();
             }
-
-            to_shoot = null;
         }
+
+        to_shoot = null;
     }
 
     public void SetToShoot(GameObject go)
