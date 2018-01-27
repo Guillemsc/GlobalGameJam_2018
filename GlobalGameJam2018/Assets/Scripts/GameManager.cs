@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     GameObject curr_level = null;
     GameObject curr_player = null;
-    MushroomStar curr_star = null;
+    GameObject curr_star = null;
 
     GameObject camera = null;
 
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLevel(4);
+        LoadLevel(0);
     }
 
     private void Update()
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
                 Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
                 curr_player = Instantiate(player, player_spawn, Quaternion.identity);
 
-                curr_star = curr.GetStar().GetComponent<MushroomStar>();
+                curr_star = curr.GetStar();
 
                 curr_level_deaths = 0;
 
@@ -146,5 +146,10 @@ public class GameManager : MonoBehaviour
     public void ReplayLevel()
     {
         LoadLevel(curr_lvl);
+    }
+
+    public void LevelFinished()
+    {
+        end_ui.SetActive(true);
     }
 }

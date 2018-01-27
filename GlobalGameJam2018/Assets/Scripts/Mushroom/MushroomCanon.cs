@@ -67,7 +67,7 @@ public class MushroomCanon : MonoBehaviour
             rotation_dir = GetRandomRotDir();
             ia_rotation_speed = Random.Range(0.1f, 0.3f);
 
-            animator.StopPlayback();
+            animator.SetBool("suck", false);
         }
 
         if(rotation_timer.GetTime() > rotation_time && state == MushroomCanonState.MC_ROTATE)
@@ -76,13 +76,16 @@ public class MushroomCanon : MonoBehaviour
 
             shoot_timer.Start();
             state = MushroomCanonState.MC_SHOOT;
+
+            animator.SetBool("suck", false);
         }
 
-        if(shoot_timer.GetTime() > shoot_time && state == MushroomCanonState.MC_SHOOT)
+        if (shoot_timer.GetTime() > shoot_time && state == MushroomCanonState.MC_SHOOT)
         {
             suck_timer.Start();
             state = MushroomCanonState.MC_SUCK;
-            animator.Play(0);
+
+            animator.SetBool("suck", true);
         }
     }
 

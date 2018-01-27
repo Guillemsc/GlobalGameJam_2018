@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MushroomStar : MonoBehaviour {
+public class MushroomStar : MonoBehaviour
+{
 
     private bool check = false;
     private AudioSource audio = null;
     private bool finished = false;
 
-	// Use this for initialization
-	void Awake () {
+	void Awake ()
+    {
         audio = gameObject.GetComponent<AudioSource>();
 	}
 	
-	// Update is called once per frame
 	void Update ()
     {
 		if (check)
@@ -24,12 +24,17 @@ public class MushroomStar : MonoBehaviour {
 	}
 
     public void setCheck(bool _check)
-    {
-        if (check != true)
-        {
+    {    
+        if(check != true)
             check = _check;
-            finished = true;
-        }
+
+        GameObject.FindGameObjectWithTag("game_manager").GetComponent<GameManager>().LevelFinished();    
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "player")
+            setCheck(true);
     }
 
     public bool GetFinished() { return finished; }
