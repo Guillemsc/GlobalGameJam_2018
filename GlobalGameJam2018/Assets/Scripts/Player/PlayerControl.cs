@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     private float acceleration = 500f;
     private float jump_foce = 70.1f;
 
-    private float max_fall_velocity = 8.0f;
+    private float max_fall_velocity = 4.0f;
     private float max_sides_velocity = 1.5f;
 
     private bool can_jump = false;
@@ -124,6 +124,11 @@ public class PlayerControl : MonoBehaviour
         if(collision.gameObject.tag == "platform")
         {
             can_jump = true;
+        }
+
+        if(collision.gameObject.tag == "spore")
+        {
+            Disappear();
         }
     }
 }

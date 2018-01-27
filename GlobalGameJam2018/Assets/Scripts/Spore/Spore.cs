@@ -38,13 +38,21 @@ public class Spore : MonoBehaviour {
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, -max_fall_velocity);
         }
 
-        if(Mathf.Abs(rigid_body.velocity.x) > max_x_velocity)
+        if(Mathf.Abs(rigid_body.velocity.x) > max_x_velocity && rigid_body.velocity.y < 0)
         {
             if(rigid_body.velocity.x > 0)
                 rigid_body.velocity = new Vector2(max_x_velocity, rigid_body.velocity.y);
 
             if (rigid_body.velocity.x < 0)
                 rigid_body.velocity = new Vector2(-max_x_velocity, rigid_body.velocity.y);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "player")
+        {
+            Destroy(this.gameObject);
         }
     }
 }

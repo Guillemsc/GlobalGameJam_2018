@@ -39,9 +39,10 @@ GameObject:
   - component: {fileID: 58521644571643710}
   - component: {fileID: 50067076618392956}
   - component: {fileID: 114945250227504566}
+  - component: {fileID: 252536476463823692}
   m_Layer: 9
   m_Name: Spore
-  m_TagString: Untagged
+  m_TagString: spore
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,8 +54,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846701889924426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.33, y: 2.91, z: 0.0032490673}
-  m_LocalScale: {x: 0.29989338, y: 0.29989338, z: 0.29989338}
+  m_LocalPosition: {x: 1.2014723, y: -3.066973, z: 0.0032490673}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0}
   m_Children:
   - {fileID: 4727945081654260}
   m_Father: {fileID: 0}
@@ -103,7 +104,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -132,8 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97577d626dcf288419af2c0603fbad61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_fall_velocity: 0.2
-  max_x_velocity: 3
+  max_fall_velocity: 0.1
+  max_x_velocity: 1
+  life_time: 15
 --- !u!212 &212944392079395082
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -178,3 +180,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!252 &252536476463823692
+SurfaceEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846701889924426}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294966728
+  m_Speed: 1
+  m_SpeedVariation: 0
+  m_ForceScale: 0.1
+  m_UseContactForce: 0
+  m_UseFriction: 1
+  m_UseBounce: 1

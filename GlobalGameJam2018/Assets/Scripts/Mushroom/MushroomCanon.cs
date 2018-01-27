@@ -19,7 +19,8 @@ public class MushroomCanon : MonoBehaviour
 
     Mushroom mush = null;
 
-    [SerializeField] float shoot_force;
+    [SerializeField] float spore_shoot_force;
+    [SerializeField] float player_shoot_force;
     [SerializeField] float rotation_speed = 0.2f;
     private float ia_rotation_speed = 0.0f;
 
@@ -61,7 +62,7 @@ public class MushroomCanon : MonoBehaviour
             state = MushroomCanonState.MC_ROTATE;
 
             rotation_dir = GetRandomRotDir();
-            ia_rotation_speed = Random.Range(0.1f, 0.7f);
+            ia_rotation_speed = Random.Range(0.1f, 0.3f);
         }
 
         if(rotation_timer.GetTime() > rotation_time && state == MushroomCanonState.MC_ROTATE)
@@ -90,11 +91,11 @@ public class MushroomCanon : MonoBehaviour
                 if(to_shoot != null && to_shoot.tag == "player")
                 {
                     Rotate();
+                    to_shoot.GetComponent<PlayerControl>().Disappear();
                 }
                 else
                 {
                     RotateIA();
-                    to_shoot.GetComponent<PlayerControl>().Disappear();
                 }
                 break;
 
@@ -152,17 +153,26 @@ public class MushroomCanon : MonoBehaviour
         {
             sp = Instantiate(mush.spore_prefab, transform.position, Quaternion.identity);
             rb = sp.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                rb.AddForce(canon_pivot.transform.up * spore_shoot_force);
+                audio.Play();
+            }
         }
         else
         {
-            rb = to_shoot.GetComponent<Rigidbody2D>();
             to_shoot.GetComponent<PlayerControl>().Appear();
-        }
+            rb = to_shoot.GetComponent<Rigidbody2D>();
 
-        if(rb != null)
-        {
-            rb.AddForce(canon_pivot.transform.up * shoot_force);
-            audio.Play();
+            if (rb != null)
+            {
+                to_shoot.transform.position = canon_pivot.transform.position;
+                rb.AddForce(canon_pivot.transform.up * player_shoot_force);
+                audio.Play();
+            }
+
+            to_shoot = null;
         }
     }
 
