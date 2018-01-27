@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_spawn: {fileID: 1086113253483982}
-  level_num: 0
+  level_num: 5
   finish_star: {fileID: 1003271673572782}
   camera_pos: {x: -0.64, y: 0.83}
   three_stars_deaths: 1
