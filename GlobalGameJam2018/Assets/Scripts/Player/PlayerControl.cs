@@ -96,6 +96,8 @@ public class PlayerControl : MonoBehaviour
             {
                 LookForMushroom();
             }
+
+            animator.SetFloat("velocity_x_abs", Mathf.Abs(rigid_body.velocity.x));
         }
     }
 
