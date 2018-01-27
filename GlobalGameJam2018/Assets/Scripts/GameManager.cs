@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        LoadLevel(0);
+    }
+
     public void LoadLevel(int level)
     {
         for (int i = 0; i < levels.Length; ++i)
@@ -30,13 +35,15 @@ public class GameManager : MonoBehaviour
 
                 if(player != null)
                 {
-                    Destroy(player);
+                    Destroy(curr_player);
                 }
 
                 curr_level = Instantiate(curr.gameObject, transform.position, Quaternion.identity);
 
                 Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
                 curr_player = Instantiate(player, player_spawn, Quaternion.identity);
+
+                break;
             }
         }
     }
