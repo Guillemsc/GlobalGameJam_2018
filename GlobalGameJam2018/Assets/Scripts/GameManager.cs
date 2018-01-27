@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        LoadLevel(curr_lvl++);
+        LoadLevel(++curr_lvl);
     }
 
     public void ReplayLevel()

@@ -560,8 +560,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280949552521262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3316014, y: -1.200286, z: -0.49287233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: -0.711, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4364627202054626}
@@ -798,7 +798,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.38666666, y: 0.13}
+    oldSize: {x: 0.38666666, y: 0.15333334}
     newSize: {x: 1.16, y: 0.39}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1321,10 +1321,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_spawn: {fileID: 1086113253483982}
-  level_num: 5
-  finish_star: {fileID: 1373979052095644, guid: 67ff4118e9687044aa8c85abd2e0b5ad,
-    type: 2}
-  camera_pos: {x: -0.635, y: 0.83}
+  level_num: 0
+  finish_star: {fileID: 1003271673572782}
+  camera_pos: {x: -0.64, y: 0.83}
+  three_stars_deaths: 1
+  two_and_half_stars_deaths: 2
+  two_stars_deaths: 3
+  one_and_half_stars_deaths: 4
+  one_star_deaths: 5
+  half_star_deaths: 6
 --- !u!114 &114897980490876956
 MonoBehaviour:
   m_ObjectHideFlags: 1

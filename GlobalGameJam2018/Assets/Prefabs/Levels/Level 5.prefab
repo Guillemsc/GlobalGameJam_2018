@@ -1340,6 +1340,7 @@ MonoBehaviour:
   blow_time: 6
   recharge_time: 2
   spore_force: 600
+  max_sides_speed: 0.2
   curr_state: 1
 --- !u!114 &114718773469934086
 MonoBehaviour:
@@ -1376,9 +1377,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_spawn: {fileID: 1802886591951224}
   level_num: 4
-  finish_star: {fileID: 1373979052095644, guid: 67ff4118e9687044aa8c85abd2e0b5ad,
-    type: 2}
+  finish_star: {fileID: 1267175256208786}
   camera_pos: {x: -1.605, y: 0.03}
+  three_stars_deaths: 1
+  two_and_half_stars_deaths: 2
+  two_stars_deaths: 3
+  one_and_half_stars_deaths: 4
+  one_star_deaths: 5
+  half_star_deaths: 6
 --- !u!114 &114836207863124108
 MonoBehaviour:
   m_ObjectHideFlags: 1

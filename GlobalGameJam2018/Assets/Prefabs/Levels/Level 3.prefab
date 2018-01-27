@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1844287436531142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2270284, y: -0.8383282, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4571374230270842}
@@ -1304,9 +1304,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_spawn: {fileID: 1183643956968414}
   level_num: 2
-  finish_star: {fileID: 1373979052095644, guid: 67ff4118e9687044aa8c85abd2e0b5ad,
-    type: 2}
+  finish_star: {fileID: 1270287639866978}
   camera_pos: {x: -1.605, y: 0.03}
+  three_stars_deaths: 1
+  two_and_half_stars_deaths: 2
+  two_stars_deaths: 3
+  one_and_half_stars_deaths: 4
+  one_star_deaths: 5
+  half_star_deaths: 6
 --- !u!114 &114835806060772586
 MonoBehaviour:
   m_ObjectHideFlags: 1
