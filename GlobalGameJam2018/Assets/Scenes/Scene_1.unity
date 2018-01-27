@@ -341,7 +341,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 505744631}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -419,7 +419,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.47
+  orthographic size: 1.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 1607455915}
   m_Layer: 0
   m_Name: CAMERA
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,4 +670,5 @@ MonoBehaviour:
   - {fileID: 1137336342688498, guid: 2dcd754430ac8374680509a7047a220c, type: 2}
   - {fileID: 1844287436531142, guid: b5fe9ac963198f64294a67f0ee6f1063, type: 2}
   - {fileID: 1844287436531142, guid: 31bcac3c05696f64fbf3eb007896581c, type: 2}
+  - {fileID: 1280949552521262, guid: 0a496cce27972f249aebf7202cba8711, type: 2}
   player: {fileID: 1701156295415486, guid: 92ef8337674f5284e929afd2d8d8889d, type: 2}

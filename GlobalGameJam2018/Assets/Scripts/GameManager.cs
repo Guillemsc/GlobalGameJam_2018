@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLevel(6);
+        LoadLevel(5);
     }
 
     private void Update()
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
                     Destroy(curr_player);
                 }
 
-                camera.transform.position = curr.GetCameraPos();
+                camera.transform.position = new Vector3(curr.GetCameraPos().x, curr.GetCameraPos().y, camera.transform.position.z);
 
                 curr_level = Instantiate(curr.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
