@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752508934572642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.055013, y: -12.901961, z: 0.08966131}
+  m_LocalPosition: {x: -2.451773, y: -0.2348263, z: 0.08966131}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4982101597231198}
@@ -256,11 +256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c3c40fc23aa154bb0edc4d55ed2706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_foce: 820
-  deforce: 1000
-  blow_time: 6
+  max_foce: 1000
+  deforce: 1500
+  blow_time: 8
   recharge_time: 2
-  spore_force: 600
+  spore_force: 0.4
   curr_state: 1
 --- !u!114 &114390392203975014
 MonoBehaviour:
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  max_fall_vel: 5
+  max_fall_vel: 0.3
   max_x_velocity: 5
   spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
     type: 2}
