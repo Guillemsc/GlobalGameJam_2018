@@ -1472,11 +1472,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  player_spawn: {fileID: 1445692218549808}
+  level_num: 1
+--- !u!114 &114987949155074380
+=======
   spore_shoot_force: 2000
   player_shoot_force: 5000
   rotation_speed: 2
   canon_pivot: {fileID: 1039824137186006}
 --- !u!114 &114829034444566988
+>>>>>>> 5e168bf298d2212f0339c2afc47fdda309537428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

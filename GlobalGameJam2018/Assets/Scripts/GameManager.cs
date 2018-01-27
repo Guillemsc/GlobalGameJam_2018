@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLevel(0);
+        LoadLevel(6);
     }
 
     private void Update()
@@ -63,9 +63,13 @@ public class GameManager : MonoBehaviour
                     Destroy(curr_player);
                 }
 
+<<<<<<< HEAD
                 camera.transform.position = curr.GetCameraPos();
 
                 curr_level = Instantiate(curr.gameObject, transform.position, Quaternion.identity);
+=======
+                curr_level = Instantiate(curr.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+>>>>>>> 2655fcac6b9a9ccb90fb576227bf37795aa3dac0
 
                 Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
                 curr_player = Instantiate(player, player_spawn, Quaternion.identity);

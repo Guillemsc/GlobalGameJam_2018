@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_spawn: {fileID: 1257944647430718}
-  level_num: 0
+  level_num: 1
 --- !u!114 &114649117831993020
 MonoBehaviour:
   m_ObjectHideFlags: 1
