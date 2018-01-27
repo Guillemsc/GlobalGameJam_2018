@@ -35,6 +35,8 @@ public class PlayerControl : MonoBehaviour
 
     public bool alive = true;
 
+    Timer peck = new Timer();
+
     enum audioclips
     {
         bird_1,
@@ -65,6 +67,9 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        if (peck.GetTime() > 0.5f && animator.GetBool("peck") == true)
+            animator.SetBool("peck", false);
+
         if (mushroom_in_head)
         {
             if (alive_in_head.GetTime() > time_alive_in_head)
@@ -261,6 +266,7 @@ public class PlayerControl : MonoBehaviour
             }
 
             animator.SetBool("peck", true);
+            peck.Start();
         }
     }
 

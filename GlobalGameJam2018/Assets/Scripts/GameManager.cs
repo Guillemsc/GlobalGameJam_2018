@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLevel(5);
+        LoadLevel(4);
     }
 
     private void Update()
