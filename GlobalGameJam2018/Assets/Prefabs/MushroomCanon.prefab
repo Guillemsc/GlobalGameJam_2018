@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814603413104662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4403945905116298}
@@ -115,8 +115,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868269755358944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.53, z: 0}
-  m_LocalScale: {x: 0.55, y: 1.1, z: -1.05}
+  m_LocalPosition: {x: 0, y: -0.0358, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: -1.05}
   m_Children: []
   m_Father: {fileID: 4122008526826650}
   m_RootOrder: 0
@@ -129,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 1329403431846070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.8100004, y: -3.541, z: 0.08966131}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 0.3}
   m_Children:
   - {fileID: 4380127930367230}
   - {fileID: 4122008526826650}
@@ -197,7 +197,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.38666666, y: 0.36}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -322,9 +322,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spore_shoot_force: 10000
-  player_shoot_force: 5000
-  rotation_speed: 0.2
+  spore_shoot_force: 6000
+  player_shoot_force: 7000
+  rotation_speed: 1
   canon_pivot: {fileID: 1814603413104662}
 --- !u!212 &212342410470876000
 SpriteRenderer:
@@ -360,7 +360,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b82972384e7b9c41b7d6b273882ad25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a21848100a5abbc41a1e0e030f6b177b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,8 +403,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b82972384e7b9c41b7d6b273882ad25, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 0845f4b9b0a8595409ee62ac568d9750, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
