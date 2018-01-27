@@ -379,7 +379,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489883423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 466.5, y: 262.5, z: 0}
+  m_LocalPosition: {x: 766, y: 386.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014418177}
@@ -704,7 +704,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 720308483}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1853951559}
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &720308483
@@ -1157,7 +1168,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1756280890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1853951559}
+        m_MethodName: ReplayLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1756280890
@@ -1241,6 +1263,13 @@ MonoBehaviour:
   - {fileID: 1005490486253684, guid: 950952a2d83f3f04593cbd682ade9ed3, type: 2}
   - {fileID: 1280949552521262, guid: 0a496cce27972f249aebf7202cba8711, type: 2}
   player: {fileID: 1701156295415486, guid: 92ef8337674f5284e929afd2d8d8889d, type: 2}
+  star_1: {fileID: 553955353}
+  star_2: {fileID: 1936789618}
+  star_3: {fileID: 1327353648}
+  full_star: {fileID: 21300000, guid: e8fafb7f24322b04a99e377566537481, type: 3}
+  half_star: {fileID: 21300000, guid: 13a44c9fbef30d84d8e912522e2549b2, type: 3}
+  void_star: {fileID: 21300000, guid: 43b4f159363d09547be24aca862ca0ad, type: 3}
+  end_ui: {fileID: 489883423}
 --- !u!1 &1936789616
 GameObject:
   m_ObjectHideFlags: 0
