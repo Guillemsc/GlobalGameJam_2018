@@ -33,8 +33,11 @@ public class MushroomStar : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "player" && !finished)
+        {
+            finished = true;
             setCheck(true);
+        }
     }
 
     public bool GetFinished() { return finished; }

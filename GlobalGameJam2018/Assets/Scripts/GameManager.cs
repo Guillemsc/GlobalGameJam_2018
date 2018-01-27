@@ -59,42 +59,6 @@ public class GameManager : MonoBehaviour
                 curr_level_deaths++;
             }
         }
-
-        if(curr_star != null && curr_star.GetFinished())
-        {
-            end_ui.SetActive(true);
-            int half_stars = curr_level.GetComponent<Level>().CheckStars(curr_level_deaths);
-
-            switch (half_stars)
-            {
-                case 0:
-                    break;
-                case 1:
-                    star_1.sprite = half_star;
-                    break;
-                case 2:
-                    star_1.sprite = full_star;
-                    break;
-                case 3:
-                    star_1.sprite = full_star;
-                    star_2.sprite = half_star;
-                    break;
-                case 4:
-                    star_1.sprite = full_star;
-                    star_2.sprite = full_star;
-                    break;
-                case 5:
-                    star_1.sprite = full_star;
-                    star_2.sprite = full_star;
-                    star_3.sprite = half_star;
-                    break;
-                case 6:
-                    star_1.sprite = full_star;
-                    star_2.sprite = full_star;
-                    star_3.sprite = full_star;
-                    break;
-            }
-        }
     }
 
     public void LoadLevel(int level)
@@ -151,5 +115,37 @@ public class GameManager : MonoBehaviour
     public void LevelFinished()
     {
         end_ui.SetActive(true);
+
+        int half_stars = curr_level.GetComponent<Level>().CheckStars(curr_level_deaths);
+
+        switch (half_stars)
+        {
+            case 0:
+                break;
+            case 1:
+                star_1.sprite = half_star;
+                break;
+            case 2:
+                star_1.sprite = full_star;
+                break;
+            case 3:
+                star_1.sprite = full_star;
+                star_2.sprite = half_star;
+                break;
+            case 4:
+                star_1.sprite = full_star;
+                star_2.sprite = full_star;
+                break;
+            case 5:
+                star_1.sprite = full_star;
+                star_2.sprite = full_star;
+                star_3.sprite = half_star;
+                break;
+            case 6:
+                star_1.sprite = full_star;
+                star_2.sprite = full_star;
+                star_3.sprite = full_star;
+                break;
+        }
     }
 }
