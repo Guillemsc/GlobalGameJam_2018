@@ -9,10 +9,15 @@ public class GameManager : MonoBehaviour
 
     GameObject curr_level = null;
     GameObject curr_player = null;
+    MushroomStar curr_star = null;
+
+    GameObject camera = null;
+
+    int curr_lvl = 0;
 
     private void Awake()
     {
-
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     private void Start()
@@ -31,6 +36,11 @@ public class GameManager : MonoBehaviour
                 curr_player.GetComponent<PlayerControl>().Respawn(player_spawn);
             }
         }
+
+        if(curr_star != null && curr_star.GetFinished())
+        {
+            //curr_lvl++;
+        }
     }
 
     public void LoadLevel(int level)
@@ -41,7 +51,9 @@ public class GameManager : MonoBehaviour
 
             if(curr.GetLevelNum() == level)
             {
-                if(curr_level != null)
+                curr_lvl = level;
+
+                if (curr_level != null)
                 {
                     Destroy(curr_level);
                 }
@@ -51,10 +63,14 @@ public class GameManager : MonoBehaviour
                     Destroy(curr_player);
                 }
 
+                camera.transform.position = curr.GetCameraPos();
+
                 curr_level = Instantiate(curr.gameObject, new Vector3(0, 0, 0), Quaternion.identity);
 
                 Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
                 curr_player = Instantiate(player, player_spawn, Quaternion.identity);
+
+                curr_star = curr.GetStar().GetComponent<MushroomStar>();
 
                 break;
             }

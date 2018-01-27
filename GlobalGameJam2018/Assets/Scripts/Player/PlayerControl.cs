@@ -159,11 +159,13 @@ public class PlayerControl : MonoBehaviour
     {
         Disappear();
         alive = false;
+        mushroom_in_head = false;
     }
 
     public void Respawn(Vector3 pos)
     {
         Appear();
+        player_mushroom.SetActive(false);
         alive = true;
         gameObject.transform.position = pos;
     }
@@ -240,6 +242,7 @@ public class PlayerControl : MonoBehaviour
                 mushroom_in_head = true;
                 type_in_head = closest.GetComponent<Mushroom>().GetMushroomType();
                 alive_in_head.Start();
+                player_mushroom.SetActive(true);
 
                 switch (type_in_head)
                 {

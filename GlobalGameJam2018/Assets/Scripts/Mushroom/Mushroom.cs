@@ -71,14 +71,12 @@ public class Mushroom : MonoBehaviour
     {
         platform_effector.enabled = false;
         collider.usedByEffector = false;
-        rb2d.bodyType = RigidbodyType2D.Dynamic;
     }
 
     private void SetStatic()
     {
         platform_effector.enabled = true;
         collider.usedByEffector = true;
-        rb2d.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
