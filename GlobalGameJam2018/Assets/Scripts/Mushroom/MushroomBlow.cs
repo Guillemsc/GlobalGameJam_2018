@@ -50,6 +50,7 @@ public class MushroomBlow : MonoBehaviour
     private void Awake()
     {
         audio = gameObject.GetComponent<AudioSource>();
+        GetComponent<Rigidbody2D>().WakeUp();
     }
 
     public void Start()
@@ -72,7 +73,7 @@ public class MushroomBlow : MonoBehaviour
             {
                 shot_spore = false;
                 Vector3 spore_pos = transform.position;
-                spore_pos.y += 0.1f;
+                spore_pos.y += 0.35f;
                 GameObject spore = Instantiate(GetComponent<Mushroom>().spore_prefab,spore_pos,Quaternion.identity);
                 int rand_direction = Random.Range(0, 2);
                 Vector2 direction;
