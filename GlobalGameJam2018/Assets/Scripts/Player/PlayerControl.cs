@@ -101,6 +101,11 @@ public class PlayerControl : MonoBehaviour
             }
 
             animator.SetFloat("velocity_x_abs", Mathf.Abs(rigid_body.velocity.x));
+            
+            if (Mathf.Abs(rigid_body.velocity.y) < 0.75 && animator.GetBool("jump") == true)
+            {
+                animator.SetBool("jump", false);
+            }
         }
     }
 
@@ -186,6 +191,8 @@ public class PlayerControl : MonoBehaviour
 
             rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
             can_jump = false;
+
+            animator.SetBool("jump", true);
         }
     }
 
