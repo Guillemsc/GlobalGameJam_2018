@@ -25,6 +25,8 @@ public class MushroomBlow : MonoBehaviour
     [SerializeField]
     States curr_state = States.S_RECHARGE;
 
+    private AudioSource audio = null;
+
     public void SetBlow(GameObject blow)
     {
         if (curr_state == States.S_BLOWING)
@@ -39,6 +41,11 @@ public class MushroomBlow : MonoBehaviour
                 rb.AddForce(jump);
             }
         }
+    }
+
+    private void Awake()
+    {
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     public void Start()
@@ -65,6 +72,7 @@ public class MushroomBlow : MonoBehaviour
                 else direction = gameObject.transform.right;
                 Vector2 force = direction * spore_force * Random.Range(0.9f,1.4f);
                 spore.GetComponent<Rigidbody2D>().AddForce(force);
+                audio.Play();
             }
         }
 
