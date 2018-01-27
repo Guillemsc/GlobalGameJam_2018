@@ -324,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spore_shoot_force: 6000
   player_shoot_force: 7000
-  rotation_speed: 1
+  rotation_speed: 2
   canon_pivot: {fileID: 1814603413104662}
 --- !u!212 &212342410470876000
 SpriteRenderer:

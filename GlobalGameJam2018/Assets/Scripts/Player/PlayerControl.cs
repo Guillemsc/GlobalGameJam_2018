@@ -28,6 +28,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] GameObject canon_prefab;
     [SerializeField] GameObject platform_prefab;
 
+    GameObject player_mushroom = null;
+
     public bool alive = true;
 
     enum audioclips
@@ -46,6 +48,7 @@ public class PlayerControl : MonoBehaviour
     {
         rigid_body = gameObject.GetComponent<Rigidbody2D>();
         audio = gameObject.GetComponent<AudioSource>();
+        player_mushroom = GameObject.FindGameObjectWithTag("player_mushroom");
     }
 
     private void Start ()
@@ -97,8 +100,6 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKeyDown("w"))
             {
                 Jump();
-                audio.clip = audios[4];
-                audio.Play();
             }
 
             if (Input.GetKeyDown("j"))
@@ -115,6 +116,7 @@ public class PlayerControl : MonoBehaviour
         gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        player_mushroom.SetActive(false);
     }
 
     public void Appear()
@@ -122,6 +124,7 @@ public class PlayerControl : MonoBehaviour
         gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        player_mushroom.SetActive(true);
     }
 
     private void MoveLeft()
@@ -140,6 +143,9 @@ public class PlayerControl : MonoBehaviour
     {
         if (can_jump)
         {
+            audio.clip = audios[4];
+            audio.Play();
+
             rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
             can_jump = false;
         }
@@ -176,13 +182,30 @@ public class PlayerControl : MonoBehaviour
                 mushroom_in_head = true;
                 type_in_head = closest.GetComponent<Mushroom>().GetMushroomType();
                 alive_in_head.Start();
+
+                switch (type_in_head)
+                {
+                    case Mushroom.MushroomType.MT_PLATFORM:
+                        player_mushroom.GetComponent<Animator>().SetBool("platform", true);
+                        break;
+                    case Mushroom.MushroomType.MT_WIND:
+                        player_mushroom.GetComponent<Animator>().SetBool("blow", true);
+                        break;
+                    case Mushroom.MushroomType.MT_CANON:
+                        player_mushroom.GetComponent<Animator>().SetBool("canon", true);
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
 
     private void InstantiateMush()
     {
-        switch(type_in_head)
+        Vector3 pos = player_mushroom.transform.position;
+
+        switch (type_in_head)
         {
             case Mushroom.MushroomType.MT_CANON:
                 Instantiate(canon_prefab, gameObject.transform.position, Quaternion.identity);
@@ -199,7 +222,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "platform")
+        if(collision.gameObject.tag == "platform" || collision.gameObject.tag == "mushroom")
         {
             can_jump = true;
         }
