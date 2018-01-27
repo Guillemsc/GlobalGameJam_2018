@@ -73,25 +73,7 @@ public class PlayerControl : MonoBehaviour
                 alive = false;
             }
         }
-<<<<<<< HEAD
 
-=======
-
-        if (alive)
-        {
-            if (Input.GetKeyDown("j"))
-            {
-                LookForMushroom();
-            }
-        }
-    }
-
-    private void FixedUpdate ()
-    {
-        if (animator.GetBool("peck"))
-           animator.SetBool("peck", false);
-
->>>>>>> aa54fde12fc4d01fc3044c7297b911b97a6fa195
         if (alive)
         {
             if (bird_singing.GetTime() > random_sing)
@@ -126,17 +108,10 @@ public class PlayerControl : MonoBehaviour
                 MoveLeft();
             }
 
-<<<<<<< HEAD
             if (Input.GetKey("d"))
             {
                 MoveRight();
             }
-=======
-            //if (Input.GetKeyDown("j"))
-            //{
-            //    LookForMushroom();
-            //}
->>>>>>> aa54fde12fc4d01fc3044c7297b911b97a6fa195
 
             Cap();
         }
