@@ -130,7 +130,7 @@ public class MushroomCanon : MonoBehaviour
             canon_pivot.transform.rotation
                 = Quaternion.Euler(canon_pivot.transform.rotation.eulerAngles.x,
                 canon_pivot.transform.rotation.eulerAngles.y,
-                canon_pivot.transform.rotation.eulerAngles.z + ia_rotation_speed);
+                canon_pivot.transform.rotation.eulerAngles.z + rotation_speed);
         }
 
         if (Input.GetKey("d"))
@@ -138,7 +138,7 @@ public class MushroomCanon : MonoBehaviour
             canon_pivot.transform.rotation
                 = Quaternion.Euler(canon_pivot.transform.rotation.eulerAngles.x,
                 canon_pivot.transform.rotation.eulerAngles.y,
-                canon_pivot.transform.rotation.eulerAngles.z - ia_rotation_speed);
+                canon_pivot.transform.rotation.eulerAngles.z - rotation_speed);
         }
     }
 
@@ -181,6 +181,9 @@ public class MushroomCanon : MonoBehaviour
         if(to_shoot == null && state == MushroomCanonState.MC_SUCK)
         {
             to_shoot = go;
+
+            rotation_timer.Start();
+            state = MushroomCanonState.MC_ROTATE;
         }
     }
 
