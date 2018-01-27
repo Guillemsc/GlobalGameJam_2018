@@ -65,7 +65,7 @@ public class MushroomBlow : MonoBehaviour
 
         if(curr_state == States.S_BLOWING)
         {
-            if (timer.GetTime() > blow_time - 0.9f && shot_spore)
+            if (timer.GetTime() > blow_time - 0.7f && shot_spore)
                 anim.SetBool("shot", true);
 
             if (timer.GetTime() > blow_time - 0.5f && shot_spore)
@@ -87,7 +87,7 @@ public class MushroomBlow : MonoBehaviour
         }
         else
         {
-            if (timer.GetTime() > recharge_time - 0.9)
+            if (timer.GetTime() > recharge_time - 0.7)
                 anim.SetBool("blowing", true);
         }
 
