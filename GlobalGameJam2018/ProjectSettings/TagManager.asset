@@ -7,7 +7,8 @@ TagManager:
   - dialog_manager
   - player
   - game_manager
-  - player_base
+  - mushroom
+  - platform
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - 
   - Player
-  - PlayerBase
+  - Mushroom
   - 
   - 
   - 

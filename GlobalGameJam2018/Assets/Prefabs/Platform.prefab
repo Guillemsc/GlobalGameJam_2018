@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4560005293259366}
   - component: {fileID: 61442567887759532}
-  - component: {fileID: 114496646795256960}
   - component: {fileID: 212744515349628994}
+  - component: {fileID: 251160134876025598}
   m_Layer: 0
   m_Name: Platform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: platform
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373005570473516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.96, y: -0.65, z: 0.00034157978}
-  m_LocalScale: {x: 5.82, y: 1, z: 1}
+  m_LocalPosition: {x: 2.84, y: -4.04, z: 0.00034157978}
+  m_LocalScale: {x: 31.8, y: 0.31, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,7 +52,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -67,18 +67,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114496646795256960
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373005570473516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28806f041a6460c4e86d6bf21a7ca460, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coll_side: 3
 --- !u!212 &212744515349628994
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,3 +111,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!251 &251160134876025598
+PlatformEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373005570473516}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967240
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 181.29
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 6.3
