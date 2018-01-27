@@ -50,7 +50,7 @@ MonoBehaviour:
   m_MaxSize: {x: 14004, y: 14042}
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
   vertical: 0
-  controlID: 115
+  controlID: 9
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -70,6 +70,7 @@ MonoBehaviour:
     width: 389
     height: 947
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
 =======
@@ -81,6 +82,10 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> parent of 07d5d54... new shrom platfrm
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -367,6 +372,7 @@ MonoBehaviour:
     m_SearchArea: 0
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Art/Mushrooms
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -387,11 +393,19 @@ MonoBehaviour:
   - Assets/Scripts/Player
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+    - Assets/Scripts/Player
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scripts/Player
+>>>>>>> parent of 07d5d54... new shrom platfrm
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\GlobalGameJam_2018\GlobalGameJam2018
+  m_LastProjectPath: C:\Users\Guillem\Documents\GitHub\GlobalGameJam_2018\GlobalGameJam2018
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: d6280000
     m_LastClickedID: 10454
@@ -407,6 +421,11 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000be280000342900003c29000000ca9a3bffffff7f
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+    m_SelectedIDs: f4280000
+    m_LastClickedID: 10484
+    m_ExpandedIDs: 00000000be280000342900003c29000000ca9a3bffffff7f
+>>>>>>> parent of 07d5d54... new shrom platfrm
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -435,6 +454,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ba2800003c29000044290000
 =======
 <<<<<<< HEAD
@@ -443,6 +463,9 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000be280000342900003c290000
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+    m_ExpandedIDs: 00000000be280000342900003c290000
+>>>>>>> parent of 07d5d54... new shrom platfrm
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -578,6 +601,7 @@ MonoBehaviour:
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: da2800005829000022290000
     m_LastClickedID: 0
     m_ExpandedIDs: 32cbffff00000000
@@ -587,6 +611,11 @@ MonoBehaviour:
     m_ExpandedIDs: def7ffff04f8ffff0000000088290000
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+    m_SelectedIDs: d0f7ffff
+    m_LastClickedID: -2096
+    m_ExpandedIDs: def7ffff04f8ffff0000000088290000
+>>>>>>> parent of 07d5d54... new shrom platfrm
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -650,6 +679,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: 13.989185, y: 0.3599422, z: -0.08350036}
     speed: 2
     m_Value: {x: 13.989185, y: 0.3599422, z: -0.08350036}
@@ -664,6 +694,11 @@ MonoBehaviour:
     m_Value: {x: 9.677773, y: -0.7438267, z: -0.005859375}
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+    m_Target: {x: 9.677773, y: -0.7438267, z: -0.005859375}
+    speed: 2
+    m_Value: {x: 9.677773, y: -0.7438267, z: -0.005859375}
+>>>>>>> parent of 07d5d54... new shrom platfrm
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -692,6 +727,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 18.374588
     speed: 2
     m_Value: 18.374588
@@ -706,6 +742,11 @@ MonoBehaviour:
     m_Value: 10.613054
 >>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
 >>>>>>> 5ce10427471aa1eff57057ee80407f6a6a5bdd70
+=======
+    m_Target: 10.613054
+    speed: 2
+    m_Value: 10.613054
+>>>>>>> parent of 07d5d54... new shrom platfrm
   m_Ortho:
     m_Target: 1
     speed: 2
