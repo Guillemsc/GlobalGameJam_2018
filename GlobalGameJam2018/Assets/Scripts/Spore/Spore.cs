@@ -9,6 +9,9 @@ public class Spore : MonoBehaviour {
     [SerializeField] private float max_fall_velocity = 4.0f;
     [SerializeField] private float max_x_velocity = 1.0f;
 
+    Timer timer = new Timer();
+
+    [SerializeField] private float life_time = 15.0f;
     
     private void Awake()
     {
@@ -17,12 +20,15 @@ public class Spore : MonoBehaviour {
 
     void Start ()
     {
-		
+        timer.Start();
 	}
 	
 	void Update ()
     {
         Cap();
+
+        if (timer.GetTime() > life_time)
+            Destroy(gameObject);
     }
 
     private void Cap()
