@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private float acceleration = 500f;
     [SerializeField] private float jump_foce = 70.1f;
+    [SerializeField] private float break_force = 200.0f;
 
     [SerializeField] private float max_fall_velocity = 4.0f;
     [SerializeField] private float max_sides_velocity = 1.5f;
@@ -14,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     private bool can_jump = false;
 
     private Rigidbody2D rigid_body = null;
+    private SpriteRenderer sprite_ren = null;
 
     public AudioClip[] audios = null;
 
@@ -52,6 +54,7 @@ public class PlayerControl : MonoBehaviour
         audio = gameObject.GetComponent<AudioSource>();
         player_mushroom = GameObject.FindGameObjectWithTag("player_mushroom");
         animator = gameObject.GetComponentInChildren<Animator>();
+        sprite_ren = gameObject.GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start ()
@@ -108,11 +111,23 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKey("a"))
             {
                 MoveLeft();
+
+                sprite_ren.flipX = true;
+            }
+            else if(rigid_body.velocity.x < -1)
+            {
+                rigid_body.AddForce(new Vector2(break_force, 0));
             }
 
             if (Input.GetKey("d"))
             {
                 MoveRight();
+
+                sprite_ren.flipX = false;
+            }
+            else if (rigid_body.velocity.x > 1)
+            {
+                rigid_body.AddForce(new Vector2(-break_force, 0));
             }
 
             Cap();
@@ -134,6 +149,21 @@ public class PlayerControl : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         player_mushroom.SetActive(true);
     }
+
+    public void Kill()
+    {
+        Disappear();
+        alive = false;
+    }
+
+    public void Respawn(Vector3 pos)
+    {
+        Appear();
+        alive = true;
+        gameObject.transform.position = pos;
+    }
+
+    public bool IsDead() { return !alive; }
 
     private void MoveLeft()
     {
@@ -254,7 +284,7 @@ public class PlayerControl : MonoBehaviour
     {
         if(collision.gameObject.tag == "spore")
         {
-            Disappear();
+            Kill();
         }
     }
 }

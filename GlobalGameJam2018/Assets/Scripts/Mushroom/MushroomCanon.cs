@@ -162,7 +162,13 @@ public class MushroomCanon : MonoBehaviour
         }
         else
         {
-            to_shoot.GetComponent<PlayerControl>().Appear();
+            PlayerControl pc = to_shoot.GetComponent<PlayerControl>();
+
+            if(pc != null)
+            {
+                pc.Appear();
+            }
+
             rb = to_shoot.GetComponent<Rigidbody2D>();
 
             if (rb != null)
