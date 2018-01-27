@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,23 @@ public class GameManager : MonoBehaviour
     int curr_lvl = 0;
 
     int curr_level_deaths = 0;
+
+    [SerializeField]
+    Image star_1;
+    [SerializeField]
+    Image star_2;
+    [SerializeField]
+    Image star_3;
+
+    [SerializeField]
+    Sprite full_star;
+    [SerializeField]
+    Sprite half_star;
+    [SerializeField]
+    Sprite void_star;
+
+    [SerializeField]
+    GameObject end_ui;
 
     private void Awake()
     {
@@ -44,12 +62,14 @@ public class GameManager : MonoBehaviour
 
         if(curr_star != null && curr_star.GetFinished())
         {
-            // Level complete
+            end_ui.SetActive(true);
         }
     }
 
     public void LoadLevel(int level)
     {
+        end_ui.SetActive(false);
+
         for (int i = 0; i < levels.Length; ++i)
         {
             Level curr = levels[i].GetComponent<Level>();
@@ -87,5 +107,10 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         LoadLevel(curr_lvl++);
+    }
+
+    public void ReplayLevel()
+    {
+        LoadLevel(curr_lvl);
     }
 }

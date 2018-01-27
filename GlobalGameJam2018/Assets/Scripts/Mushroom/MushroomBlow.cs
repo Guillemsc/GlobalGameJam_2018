@@ -12,6 +12,8 @@ public class MushroomBlow : MonoBehaviour
 
     [SerializeField] private float spore_force = 0.4f;
 
+    [SerializeField] private float max_sides_speed = 0.2f;
+
     private bool shot_spore = false;
 
     private Timer timer = new Timer();
@@ -43,6 +45,19 @@ public class MushroomBlow : MonoBehaviour
 
                 Vector2 jump = gameObject.transform.up * force;
                 rb.AddForce(jump);
+
+                if(Mathf.Abs(rb.velocity.x) > max_sides_speed)
+                {
+                    if(rb.velocity.x > max_sides_speed)
+                    {
+                        rb.velocity = new Vector2(max_sides_speed, rb.velocity.y);
+                    }
+
+                    if (rb.velocity.x < -max_sides_speed)
+                    {
+                        rb.velocity = new Vector2(-max_sides_speed, rb.velocity.y);
+                    }
+                }
             }
         }
     }

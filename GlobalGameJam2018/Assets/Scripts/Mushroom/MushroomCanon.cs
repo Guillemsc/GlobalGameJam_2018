@@ -21,7 +21,7 @@ public class MushroomCanon : MonoBehaviour
 
     [SerializeField] float spore_shoot_force;
     [SerializeField] float player_shoot_force;
-    [SerializeField] float rotation_speed = 0.2f;
+    [SerializeField] float rotation_speed = 0.25f;
     private float ia_rotation_speed = 0.0f;
 
     float suck_time = 5;
