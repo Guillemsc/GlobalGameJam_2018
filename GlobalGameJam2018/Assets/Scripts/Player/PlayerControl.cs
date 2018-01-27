@@ -220,13 +220,16 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void GroundCollider(Collider2D collision)
     {
-        if(collision.gameObject.tag == "platform" || collision.gameObject.tag == "mushroom")
+        if (collision.gameObject.tag == "platform" || collision.gameObject.tag == "mushroom")
         {
             can_jump = true;
         }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         if(collision.gameObject.tag == "spore")
         {
             Disappear();

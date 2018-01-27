@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        LoadLevel(0);
+        //LoadLevel(0);
     }
 
     public void LoadLevel(int level)
