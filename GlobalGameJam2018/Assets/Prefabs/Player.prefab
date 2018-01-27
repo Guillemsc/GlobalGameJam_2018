@@ -38,7 +38,10 @@ GameObject:
   - component: {fileID: 114096211176827202}
   - component: {fileID: 50207576817837276}
   - component: {fileID: 70812658584566424}
+<<<<<<< HEAD
   - component: {fileID: 82904444296408228}
+=======
+>>>>>>> 178c378c239e8ec8c97258c923638aecfdfec254
   m_Layer: 8
   m_Name: Player
   m_TagString: player
@@ -54,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 1417397916836186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.362, y: -2.34, z: 0.00034157978}
-  m_LocalScale: {x: 1, y: 0.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4939944543761216}
   m_Father: {fileID: 0}
@@ -67,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041521319783014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00034157978}
-  m_LocalScale: {x: 0.5245123, y: 1.2702191, z: 1}
+  m_LocalPosition: {x: 0.1486, y: 0, z: -0.00034157978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4331862510447396}
   m_RootOrder: 0
@@ -239,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b82972384e7b9c41b7d6b273882ad25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e630ed2d6e230c547964f63e5b798f96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
