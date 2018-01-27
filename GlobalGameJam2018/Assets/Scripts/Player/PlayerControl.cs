@@ -43,12 +43,14 @@ public class PlayerControl : MonoBehaviour
     }
 
     private AudioSource audio = null;
+    private Animator animator = null;
 
     private void Awake()
     {
         rigid_body = gameObject.GetComponent<Rigidbody2D>();
         audio = gameObject.GetComponent<AudioSource>();
         player_mushroom = GameObject.FindGameObjectWithTag("player_mushroom");
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     private void Start ()
@@ -70,10 +72,21 @@ public class PlayerControl : MonoBehaviour
                 alive = false;
             }
         }
+
+        if (alive)
+        {
+            if (Input.GetKeyDown("j"))
+            {
+                LookForMushroom();
+            }
+        }
     }
 
     private void FixedUpdate ()
     {
+        if (animator.GetBool("peck"))
+           animator.SetBool("peck", false);
+
         if (alive)
         {
             if (bird_singing.GetTime() > random_sing)
@@ -102,10 +115,10 @@ public class PlayerControl : MonoBehaviour
                 Jump();
             }
 
-            if (Input.GetKeyDown("j"))
-            {
-                LookForMushroom();
-            }
+            //if (Input.GetKeyDown("j"))
+            //{
+            //    LookForMushroom();
+            //}
 
             Cap();
         }
@@ -198,6 +211,8 @@ public class PlayerControl : MonoBehaviour
                         break;
                 }
             }
+
+            animator.SetBool("peck", true);
         }
     }
 
