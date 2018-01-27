@@ -44,6 +44,20 @@ public class PlayerControl : MonoBehaviour
         Cap();
     }
 
+    public void Disappear()
+    {
+        gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+    }
+
+    public void Appear()
+    {
+        gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+    }
+
     private void MoveLeft()
     {
         if(rigid_body.velocity.x > -max_sides_velocity)

@@ -92,6 +92,7 @@ public class MushroomCanon : MonoBehaviour
                 else
                 {
                     RotateIA();
+                    to_shoot.GetComponent<PlayerControl>().Disappear();
                 }
                 break;
 
@@ -153,6 +154,7 @@ public class MushroomCanon : MonoBehaviour
         else
         {
             rb = to_shoot.GetComponent<Rigidbody2D>();
+            to_shoot.GetComponent<PlayerControl>().Appear();
         }
 
         if(rb != null)
