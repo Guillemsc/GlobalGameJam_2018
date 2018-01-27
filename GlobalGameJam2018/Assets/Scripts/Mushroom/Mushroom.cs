@@ -16,6 +16,8 @@ public class Mushroom : MonoBehaviour
     private PlatformEffector2D platform_effector = null;
     private Rigidbody2D rb2d = null;
 
+    public GameObject spore_prefab;
+
     private void Awake()
     {
         collider = gameObject.GetComponent<BoxCollider2D>();

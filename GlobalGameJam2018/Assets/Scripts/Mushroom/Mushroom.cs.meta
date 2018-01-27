@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 3f2620540c81e14429269a707c99fabc
-timeCreated: 1517005189
+timeCreated: 1517017317
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
