@@ -24,6 +24,12 @@ public class PlayerControl : MonoBehaviour
     Timer alive_in_head = new Timer();
     [SerializeField] float time_alive_in_head = 5;
 
+    [SerializeField] GameObject blow_prefab;
+    [SerializeField] GameObject canon_prefab;
+    [SerializeField] GameObject platform_prefab;
+
+    public bool alive = true;
+
     enum audioclips
     {
         bird_1,
@@ -50,48 +56,58 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        if(alive_in_head.GetTime() > time_alive_in_head)
+        if (mushroom_in_head)
         {
-            Disappear();
+            if (alive_in_head.GetTime() > time_alive_in_head)
+            {
+                InstantiateMush();
+                Disappear();
+
+                mushroom_in_head = false;
+                alive = false;
+            }
         }
     }
 
     private void FixedUpdate ()
     {
-        if (bird_singing.GetTime() > random_sing)
+        if (alive)
         {
-            bird_singing.Start();
-            random_sing = Random.Range(3.0f, 10.0f);
+            if (bird_singing.GetTime() > random_sing)
+            {
+                bird_singing.Start();
+                random_sing = Random.Range(3.0f, 10.0f);
 
-            int rand = Random.Range(0, 4);
+                int rand = Random.Range(0, 4);
 
-            audio.clip = audios[rand];
-            audio.Play();
+                audio.clip = audios[rand];
+                audio.Play();
+            }
+
+            if (Input.GetKey("a"))
+            {
+                MoveLeft();
+            }
+
+            if (Input.GetKey("d"))
+            {
+                MoveRight();
+            }
+
+            if (Input.GetKeyDown("w"))
+            {
+                Jump();
+                audio.clip = audios[4];
+                audio.Play();
+            }
+
+            if (Input.GetKeyDown("j"))
+            {
+                LookForMushroom();
+            }
+
+            Cap();
         }
-
-        if (Input.GetKey("a"))
-        {
-            MoveLeft();
-        }
-
-        if (Input.GetKey("d"))
-        {
-            MoveRight();
-        }
-
-        if (Input.GetKeyDown("w"))
-        {
-            Jump();
-            audio.clip = audios[(int)audioclips.bird_jump];
-            audio.Play();
-        }
-        
-        if(Input.GetKeyDown("j"))
-        {
-            LookForMushroom();
-        }
-
-        Cap();
     }
 
     public void Disappear()
@@ -161,6 +177,23 @@ public class PlayerControl : MonoBehaviour
                 type_in_head = closest.GetComponent<Mushroom>().GetMushroomType();
                 alive_in_head.Start();
             }
+        }
+    }
+
+    private void InstantiateMush()
+    {
+        switch(type_in_head)
+        {
+            case Mushroom.MushroomType.MT_CANON:
+                Instantiate(canon_prefab, gameObject.transform.position, Quaternion.identity);
+                break;
+            case Mushroom.MushroomType.MT_PLATFORM:
+                Instantiate(platform_prefab, gameObject.transform.position, Quaternion.identity);
+                break;
+            case Mushroom.MushroomType.MT_WIND:
+                Instantiate(blow_prefab, gameObject.transform.position, Quaternion.identity);
+                break;
+
         }
     }
 
