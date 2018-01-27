@@ -21,7 +21,7 @@ public class MushroomCanon : MonoBehaviour
 
     [SerializeField] float spore_shoot_force;
     [SerializeField] float player_shoot_force;
-    [SerializeField] float rotation_speed = 0.2f;
+    [SerializeField] float rotation_speed = 0.25f;
     private float ia_rotation_speed = 0.0f;
 
     float suck_time = 5;
@@ -179,7 +179,7 @@ public class MushroomCanon : MonoBehaviour
 
             if (rb != null)
             {
-                to_shoot.transform.position = canon_pivot.transform.position;
+                to_shoot.transform.position = canon_pivot.transform.position + new Vector3(0, 0.1f, 0);
                 rb.AddForce(canon_pivot.transform.up * player_shoot_force);
                 audio.Play();
             }

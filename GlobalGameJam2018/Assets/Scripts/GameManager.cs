@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     int curr_lvl = 0;
 
+    int curr_level_deaths = 0;
+
     private void Awake()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        // Player dies
         if(curr_player != null && curr_level != null)
         {
             if(curr_player.GetComponent<PlayerControl>().IsDead())
@@ -34,12 +37,14 @@ public class GameManager : MonoBehaviour
                 Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
 
                 curr_player.GetComponent<PlayerControl>().Respawn(player_spawn);
+
+                curr_level_deaths++;
             }
         }
 
         if(curr_star != null && curr_star.GetFinished())
         {
-            //curr_lvl++;
+            // Level complete
         }
     }
 
@@ -72,8 +77,15 @@ public class GameManager : MonoBehaviour
 
                 curr_star = curr.GetStar().GetComponent<MushroomStar>();
 
+                curr_level_deaths = 0;
+
                 break;
             }
         }
+    }
+
+    public void NextLevel()
+    {
+        LoadLevel(curr_lvl++);
     }
 }

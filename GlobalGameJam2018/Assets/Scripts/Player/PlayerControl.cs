@@ -157,7 +157,9 @@ public class PlayerControl : MonoBehaviour
         gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
         gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        player_mushroom.SetActive(true);
+
+        if(mushroom_in_head)
+            player_mushroom.SetActive(true);
     }
 
     public void Kill()
@@ -222,7 +224,7 @@ public class PlayerControl : MonoBehaviour
             float closest_dist = 9999999;
             for (int i = 0; i < mushrooms.Length; ++i)
             {
-                float dist = Vector3.Distance(gameObject.transform.position, mushrooms[i].transform.position);
+                float dist = Mathf.Abs(Vector3.Distance(gameObject.transform.position, mushrooms[i].transform.position));
                 if (dist < closest_dist)
                 {
                     closest_dist = dist;
@@ -230,7 +232,7 @@ public class PlayerControl : MonoBehaviour
                 }
             }
 
-            if (closest != null && Vector3.Distance(gameObject.transform.position, closest.transform.position) < 2)
+            if (closest != null && Mathf.Abs(Vector3.Distance(gameObject.transform.position, closest.transform.position)) < 1)
             {
                 mushroom_in_head = true;
                 type_in_head = closest.GetComponent<Mushroom>().GetMushroomType();
