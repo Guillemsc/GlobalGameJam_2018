@@ -41,10 +41,13 @@ public class MushroomCanon : MonoBehaviour
 
     private AudioSource audio = null;
 
+    private Animator animator = null;
+
     private void Awake()
     {
         mush = gameObject.GetComponent<Mushroom>();
         audio = gameObject.GetComponent<AudioSource>();
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -63,6 +66,8 @@ public class MushroomCanon : MonoBehaviour
 
             rotation_dir = GetRandomRotDir();
             ia_rotation_speed = Random.Range(0.1f, 0.3f);
+
+            animator.StopPlayback();
         }
 
         if(rotation_timer.GetTime() > rotation_time && state == MushroomCanonState.MC_ROTATE)
@@ -77,6 +82,7 @@ public class MushroomCanon : MonoBehaviour
         {
             suck_timer.Start();
             state = MushroomCanonState.MC_SUCK;
+            animator.Play(0);
         }
     }
 
