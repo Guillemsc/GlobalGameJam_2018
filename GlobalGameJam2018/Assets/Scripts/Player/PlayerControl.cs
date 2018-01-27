@@ -189,17 +189,11 @@ public class PlayerControl : MonoBehaviour
            audio.clip = audios[4];
            audio.Play();
 
-<<<<<<< HEAD
            rigid_body.velocity = new Vector2(rigid_body.velocity.x, 0);
            rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
            can_jump = false;
               
-=======
-            rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
-            can_jump = false;
-
             animator.SetBool("jump", true);
->>>>>>> a01531c57cfa38d9200fd59e83c8ae484f02cffa
         }
     }
 
