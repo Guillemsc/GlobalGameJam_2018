@@ -17,7 +17,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //LoadLevel(0);
+        LoadLevel(0);
+    }
+
+    private void Update()
+    {
+        if(curr_player != null && curr_level != null)
+        {
+            if(curr_player.GetComponent<PlayerControl>().IsDead())
+            {
+                Vector3 player_spawn = curr_level.GetComponent<Level>().GetSpawn().transform.position;
+
+                curr_player.GetComponent<PlayerControl>().Respawn(player_spawn);
+            }
+        }
     }
 
     public void LoadLevel(int level)

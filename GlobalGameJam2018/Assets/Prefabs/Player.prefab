@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 500
   jump_foce: 70.1
+  break_force: 200
   max_fall_velocity: 4
   max_sides_velocity: 2
   max_jump_sides_velocity: 0.1
