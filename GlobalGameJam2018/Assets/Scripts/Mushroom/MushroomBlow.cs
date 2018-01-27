@@ -16,6 +16,8 @@ public class MushroomBlow : MonoBehaviour
 
     private Timer timer = new Timer();
 
+    private Animator anim;
+
     enum States
     {
         S_BLOWING,
@@ -53,6 +55,8 @@ public class MushroomBlow : MonoBehaviour
     public void Start()
     {
         timer.Start();
+        anim = GetComponent<Animator>();
+        anim.SetBool("blowing", true);
     }
 
     public void Update()
@@ -61,6 +65,9 @@ public class MushroomBlow : MonoBehaviour
 
         if(curr_state == States.S_BLOWING)
         {
+            if (timer.GetTime() > blow_time - 0.9f && shot_spore)
+                anim.SetBool("shot", true);
+
             if (timer.GetTime() > blow_time - 0.5f && shot_spore)
             {
                 shot_spore = false;
@@ -75,7 +82,13 @@ public class MushroomBlow : MonoBehaviour
                 Vector2 force = direction * spore_force * Random.Range(0.9f,1.4f);
                 spore.GetComponent<Rigidbody2D>().AddForce(force);
                 audio.Play();
+                
             }
+        }
+        else
+        {
+            if (timer.GetTime() > recharge_time - 0.9)
+                anim.SetBool("blowing", true);
         }
 
     }
@@ -89,6 +102,8 @@ public class MushroomBlow : MonoBehaviour
                 {
                     curr_state = States.S_RECHARGE;
                     timer.Start();
+                    anim.SetBool("blowing", false);
+                    anim.SetBool("shot", false);
                 }
                 break;
             case States.S_RECHARGE:
