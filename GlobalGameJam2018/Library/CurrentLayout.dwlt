@@ -45,7 +45,11 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 113
+=======
+  controlID: 46
+>>>>>>> 369c31749932bbfeba7d9bba3aa65218d1f58ae3
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,8 +93,8 @@ MonoBehaviour:
     y: 0
     width: 379
     height: 573
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -209,7 +213,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 47
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -233,7 +237,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 48
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -331,13 +335,19 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Prefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\GlobalGameJam_2018\GlobalGameJam2018
+  m_LastProjectPath: C:\Users\Guillem\Documents\GitHub\GlobalGameJam_2018\GlobalGameJam2018
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 922d0000
     m_LastClickedID: 11666
     m_ExpandedIDs: 00000000b62c0000922d0000bc2d0000de2d0000e42d000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: aa290000
+    m_LastClickedID: 10666
+    m_ExpandedIDs: 0000000038280000aa290000ee290000282a0000322a000000ca9a3bffffff7f
+>>>>>>> 369c31749932bbfeba7d9bba3aa65218d1f58ae3
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -365,7 +375,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000b62c0000922d0000bc2d0000de2d0000e42d0000
+=======
+    m_ExpandedIDs: 0000000038280000aa290000ee290000282a0000322a0000
+>>>>>>> 369c31749932bbfeba7d9bba3aa65218d1f58ae3
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -481,9 +495,15 @@ MonoBehaviour:
     height: 552
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: e4c1fdff00000000
+=======
+    m_SelectedIDs: 8ca9fbff
+    m_LastClickedID: -284276
+    m_ExpandedIDs: 2c28ffffa2f9ffffbcf9ffff00000000
+>>>>>>> 369c31749932bbfeba7d9bba3aa65218d1f58ae3
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -533,14 +553,20 @@ MonoBehaviour:
     width: 1148
     height: 552
   m_SceneLighting: 1
-  lastFramingTime: 0
+  lastFramingTime: 349.11303058471213
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 2.3011334, y: -2.6342301, z: 0.059049364}
     speed: 2
     m_Value: {x: 2.3011334, y: -2.6342301, z: 0.059049364}
+=======
+    m_Target: {x: 2.5493574, y: -3.1090267, z: 0.27246094}
+    speed: 2
+    m_Value: {x: 2.5493574, y: -3.1090267, z: 0.27246094}
+>>>>>>> 369c31749932bbfeba7d9bba3aa65218d1f58ae3
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -567,9 +593,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 4.1532755
     speed: 2
     m_Value: 4.1532755
+=======
+    m_Target: 2.3581483
+    speed: 2
+    m_Value: 2.3581483
+>>>>>>> 369c31749932bbfeba7d9bba3aa65218d1f58ae3
   m_Ortho:
     m_Target: 1
     speed: 2

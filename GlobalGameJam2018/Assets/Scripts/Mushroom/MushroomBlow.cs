@@ -35,6 +35,8 @@ public class MushroomBlow : MonoBehaviour
 
             if (rb != null)
             {
+                rb.bodyType = RigidbodyType2D.Dynamic;
+
                 float force = max_foce - (Mathf.Abs(Vector3.Distance(gameObject.transform.position, blow.transform.position)) * deforce);
 
                 Vector2 jump = gameObject.transform.up * force;

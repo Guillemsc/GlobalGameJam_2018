@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MushroomBlowTestColl : MonoBehaviour
 {
-
     private void OnTriggerStay2D(Collider2D other)
     {
         MushroomBlow mp = gameObject.GetComponentInParent<MushroomBlow>();
