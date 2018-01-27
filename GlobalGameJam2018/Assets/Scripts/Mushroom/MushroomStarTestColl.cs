@@ -7,12 +7,14 @@ public class MushroomStarTestColl : MonoBehaviour {
     MushroomStar ms = null;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         ms = gameObject.GetComponentInParent<MushroomStar>();
 	}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ms.setCheck(true);
+        if(collision.gameObject.tag == "player")
+            ms.setCheck(true);
     }
 }

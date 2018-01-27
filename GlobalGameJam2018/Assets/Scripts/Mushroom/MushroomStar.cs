@@ -6,6 +6,7 @@ public class MushroomStar : MonoBehaviour {
 
     private bool check = false;
     private AudioSource audio = null;
+    private bool finished = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -13,7 +14,8 @@ public class MushroomStar : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		if (check)
         {
             audio.Play();
@@ -24,6 +26,11 @@ public class MushroomStar : MonoBehaviour {
     public void setCheck(bool _check)
     {
         if (check != true)
+        {
             check = _check;
+            finished = true;
+        }
     }
+
+    public bool GetFinished() { return finished; }
 }

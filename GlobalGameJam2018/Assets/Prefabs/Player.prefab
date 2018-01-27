@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1701156295415486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9248815, y: -12.371035, z: 0.034972}
+  m_LocalPosition: {x: 0.18433999, y: -0.38501918, z: 0.034972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4902400260952272}
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 500
-  jump_foce: 70.1
+  jump_foce: 65.69
   break_force: 200
   max_fall_velocity: 4
   max_sides_velocity: 2
