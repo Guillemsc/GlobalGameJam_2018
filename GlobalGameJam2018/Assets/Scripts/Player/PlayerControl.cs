@@ -36,6 +36,7 @@ public class PlayerControl : MonoBehaviour
     public bool alive = true;
 
     Timer peck = new Timer();
+    Timer death = new Timer();
 
     enum audioclips
     {
@@ -111,6 +112,12 @@ public class PlayerControl : MonoBehaviour
             {
                 animator.SetBool("jump", false);
             }
+        }
+
+        if (death.GetTime() > 0.5f && animator.GetBool("death") == true)
+        {
+            animator.SetBool("death", false);
+            Kill();
         }
     }
 
@@ -291,7 +298,8 @@ public class PlayerControl : MonoBehaviour
     {
         if(collision.gameObject.tag == "spore")
         {
-            Kill();
+            animator.SetBool("death", true);
+            death.Start();
         }
     }
 }
