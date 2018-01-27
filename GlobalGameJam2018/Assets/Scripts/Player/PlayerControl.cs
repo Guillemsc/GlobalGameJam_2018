@@ -14,19 +14,49 @@ public class PlayerControl : MonoBehaviour
 
     private Rigidbody2D rigid_body = null;
 
+    public AudioClip[] audios = null;
+
+    Timer bird_singing = new Timer();
+    float random_sing = 0;
+
+    enum audioclips
+    {
+        bird_1,
+        bird_2,
+        bird_3,
+        bird_4,
+
+        bird_jump
+    }
+
+    private AudioSource audio = null;
+
     private void Awake()
     {
         rigid_body = gameObject.GetComponent<Rigidbody2D>();
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     private void Start ()
     {
-		
+        bird_singing.Start();
+        random_sing = Random.Range(3.0f, 10.0f);
 	}
 
     private void FixedUpdate ()
     {
-		if(Input.GetKey("a"))
+        if (bird_singing.GetTime() > random_sing)
+        {
+            bird_singing.Start();
+            random_sing = Random.Range(3.0f, 10.0f);
+
+            int rand = Random.Range(0, 4);
+
+            audio.clip = audios[rand];
+            audio.Play();
+        }
+
+        if (Input.GetKey("a"))
         {
             MoveLeft();
         }
@@ -39,6 +69,8 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown("w"))
         {
             Jump();
+            audio.clip = audios[(int)audioclips.bird_jump];
+            audio.Play();
         }
 
         Cap();

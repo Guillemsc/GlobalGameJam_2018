@@ -38,10 +38,12 @@ public class MushroomCanon : MonoBehaviour
 
     private GameObject to_shoot = null;
 
+    private AudioSource audio = null;
+
     private void Awake()
     {
         mush = gameObject.GetComponent<Mushroom>();
-
+        audio = gameObject.GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -158,6 +160,7 @@ public class MushroomCanon : MonoBehaviour
         if(rb != null)
         {
             rb.AddForce(canon_pivot.transform.up * shoot_force);
+            audio.Play();
         }
     }
 
