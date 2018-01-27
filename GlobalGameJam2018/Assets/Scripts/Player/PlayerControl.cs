@@ -68,6 +68,12 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        if (death.GetTime() > 0.5f && animator.GetBool("death") == true)
+        {
+            animator.SetBool("death", false);
+            Kill();
+        }
+
         if (peck.GetTime() > 0.5f && animator.GetBool("peck") == true)
             animator.SetBool("peck", false);
 
@@ -76,7 +82,8 @@ public class PlayerControl : MonoBehaviour
             if (alive_in_head.GetTime() > time_alive_in_head)
             {
                 InstantiateMush();
-                Disappear();
+                animator.SetBool("death", true);
+                death.Start();
 
                 mushroom_in_head = false;
                 alive = false;
@@ -112,12 +119,6 @@ public class PlayerControl : MonoBehaviour
             {
                 animator.SetBool("jump", false);
             }
-        }
-
-        if (death.GetTime() > 0.5f && animator.GetBool("death") == true)
-        {
-            animator.SetBool("death", false);
-            Kill();
         }
     }
 
