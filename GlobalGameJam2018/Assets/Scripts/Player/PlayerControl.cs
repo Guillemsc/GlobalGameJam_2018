@@ -19,6 +19,11 @@ public class PlayerControl : MonoBehaviour
     Timer bird_singing = new Timer();
     float random_sing = 0;
 
+    bool mushroom_in_head = false;
+    Mushroom.MushroomType type_in_head = Mushroom.MushroomType.MT_CANON;
+    Timer alive_in_head = new Timer();
+    [SerializeField] float time_alive_in_head = 5;
+
     enum audioclips
     {
         bird_1,
@@ -42,6 +47,14 @@ public class PlayerControl : MonoBehaviour
         bird_singing.Start();
         random_sing = Random.Range(3.0f, 10.0f);
 	}
+
+    private void Update()
+    {
+        if(alive_in_head.GetTime() > time_alive_in_head)
+        {
+            Disappear();
+        }
+    }
 
     private void FixedUpdate ()
     {
@@ -71,6 +84,11 @@ public class PlayerControl : MonoBehaviour
             Jump();
             audio.clip = audios[(int)audioclips.bird_jump];
             audio.Play();
+        }
+        
+        if(Input.GetKeyDown("j"))
+        {
+            LookForMushroom();
         }
 
         Cap();
@@ -116,6 +134,33 @@ public class PlayerControl : MonoBehaviour
         if(rigid_body.velocity.y < 0 && Mathf.Abs(rigid_body.velocity.y) > max_fall_velocity)
         {
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, -max_fall_velocity);
+        }
+    }
+
+    private void LookForMushroom()
+    {
+        if (!mushroom_in_head)
+        {
+            GameObject[] mushrooms = GameObject.FindGameObjectsWithTag("mushroom");
+
+            GameObject closest = null;
+            float closest_dist = 9999999;
+            for (int i = 0; i < mushrooms.Length; ++i)
+            {
+                float dist = Vector3.Distance(gameObject.transform.position, mushrooms[i].transform.position);
+                if (dist < closest_dist)
+                {
+                    closest_dist = dist;
+                    closest = mushrooms[i];
+                }
+            }
+
+            if (closest != null && Vector3.Distance(gameObject.transform.position, closest.transform.position) < 2)
+            {
+                mushroom_in_head = true;
+                type_in_head = closest.GetComponent<Mushroom>().GetMushroomType();
+                alive_in_head.Start();
+            }
         }
     }
 
