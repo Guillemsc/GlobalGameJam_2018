@@ -501,7 +501,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307905080406330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.949608, y: -12.407646, z: 0.051757812}
+  m_LocalPosition: {x: -0.59773356, y: -0.87848717, z: 0.051757812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4513763964403636}
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82548055d3af9d4ca626b8b03e8c2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 3000
+  force: 0
   check: 0
 --- !u!114 &114214744668585508
 MonoBehaviour:
@@ -1414,10 +1414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  max_fall_vel: 5
+  max_fall_vel: 0.3
   max_x_velocity: 5
-  spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
-    type: 2}
+  spore_prefab: {fileID: 0}
 --- !u!114 &114642704287524422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1429,11 +1428,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2620540c81e14429269a707c99fabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  max_fall_vel: 5
+  type: 0
+  max_fall_vel: 0.3
   max_x_velocity: 5
-  spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
-    type: 2}
+  spore_prefab: {fileID: 0}
 --- !u!114 &114647603127975348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1456,11 +1454,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2620540c81e14429269a707c99fabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  max_fall_vel: 5
+  type: 0
+  max_fall_vel: 0.3
   max_x_velocity: 5
-  spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
-    type: 2}
+  spore_prefab: {fileID: 0}
 --- !u!114 &114791025112050206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1472,17 +1469,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  player_spawn: {fileID: 1445692218549808}
-  level_num: 1
---- !u!114 &114987949155074380
-=======
-  spore_shoot_force: 2000
-  player_shoot_force: 5000
-  rotation_speed: 2
-  canon_pivot: {fileID: 1039824137186006}
+  spore_shoot_force: 0
+  player_shoot_force: 0
+  rotation_speed: 0.2
+  canon_pivot: {fileID: 0}
 --- !u!114 &114829034444566988
->>>>>>> 5e168bf298d2212f0339c2afc47fdda309537428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1504,11 +1495,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c3c40fc23aa154bb0edc4d55ed2706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_foce: 820
-  deforce: 1000
-  blow_time: 6
+  max_foce: 100
+  deforce: 10
+  blow_time: 8
   recharge_time: 2
-  spore_force: 0
+  spore_force: 0.4
   curr_state: 1
 --- !u!114 &114963562743646850
 MonoBehaviour:
@@ -1521,8 +1512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abc762b5e34d004ca5727d1e07d4076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_spawn: {fileID: 1445692218549808}
+  player_spawn: {fileID: 0}
   level_num: 0
+  finish_star: {fileID: 0}
+  camera_pos: {x: 0, y: 0}
 --- !u!212 &212155602234767380
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -2128,7 +2121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 97
   m_Sprite: {fileID: 21300000, guid: 0845f4b9b0a8595409ee62ac568d9750, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
