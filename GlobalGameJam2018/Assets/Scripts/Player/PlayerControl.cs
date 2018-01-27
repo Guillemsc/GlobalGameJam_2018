@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private float acceleration = 500f;
-    private float jump_foce = 160.1f;
+    private float jump_foce = 70.1f;
 
     private float max_fall_velocity = 8.0f;
-    private float max_sides_velocity = 4.0f;
+    private float max_sides_velocity = 1.5f;
+
+    private bool can_jump = false;
 
     private Rigidbody2D rigid_body = null;
 
@@ -22,7 +24,7 @@ public class PlayerControl : MonoBehaviour
 		
 	}
 
-    private void Update ()
+    private void FixedUpdate ()
     {
 		if(Input.GetKey("a"))
         {
@@ -56,7 +58,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Jump()
     {
-        rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
+        if (can_jump)
+        {
+            rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
+            can_jump = false;
+        }
     }
 
     private void Cap()
@@ -64,6 +70,14 @@ public class PlayerControl : MonoBehaviour
         if(rigid_body.velocity.y < 0 && Mathf.Abs(rigid_body.velocity.y) > max_fall_velocity)
         {
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, -max_fall_velocity);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "platform")
+        {
+            can_jump = true;
         }
     }
 }
