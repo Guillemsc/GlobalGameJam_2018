@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class MushroomBlowTestColl : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         MushroomBlow mp = gameObject.GetComponentInParent<MushroomBlow>();
 
         if (mp != null)
-            mp.SetBlow(other.gameObject);
+            mp.SetBlow(collision.gameObject);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        MushroomBlow mp = gameObject.GetComponentInParent<MushroomBlow>();
+
+        if (mp != null)
+            mp.SetBlow(collision.gameObject);
     }
 }

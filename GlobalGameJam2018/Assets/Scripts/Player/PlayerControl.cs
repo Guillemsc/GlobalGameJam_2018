@@ -277,6 +277,7 @@ public class PlayerControl : MonoBehaviour
         if (collision.gameObject.tag == "platform" || collision.gameObject.tag == "mushroom")
         {
             can_jump = true;
+            rigid_body.velocity = new Vector2(rigid_body.velocity.x, 0);
         }
     }
 
