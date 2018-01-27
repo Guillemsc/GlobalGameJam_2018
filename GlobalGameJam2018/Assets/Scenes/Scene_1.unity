@@ -508,15 +508,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1417397916836186, guid: 92ef8337674f5284e929afd2d8d8889d, type: 2}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 1417397916836186, guid: 92ef8337674f5284e929afd2d8d8889d, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92ef8337674f5284e929afd2d8d8889d, type: 2}
   m_IsPrefabParent: 0
@@ -558,6 +549,11 @@ Prefab:
     - target: {fileID: 4608076169529806, guid: c855838c1a1636444bbbdca343dc94a6, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 251418798323021024, guid: c855838c1a1636444bbbdca343dc94a6,
+        type: 2}
+      propertyPath: m_SurfaceArc
+      value: 145.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c855838c1a1636444bbbdca343dc94a6, type: 2}
