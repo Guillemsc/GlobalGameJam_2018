@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 251385871864625806}
   - component: {fileID: 50410316186147554}
   - component: {fileID: 82979536643939496}
+  - component: {fileID: 95726886016762904}
   m_Layer: 9
   m_Name: MushroomBlow
   m_TagString: Untagged
@@ -227,6 +228,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95726886016762904
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752508934572642}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 388fdfbe471e8be498613bfc58d7c3e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114169357698629978
 MonoBehaviour:
   m_ObjectHideFlags: 1
