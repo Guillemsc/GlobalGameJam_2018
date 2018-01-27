@@ -8,15 +8,21 @@ public class MushroomPlatformTestColl : MonoBehaviour
     {
         MushroomPlatform mp = gameObject.GetComponentInParent<MushroomPlatform>();
 
-        if(mp != null)
-            mp.SetCheck(true);
+        if (collision.tag == "ground_detect")
+        {
+            if (mp != null)
+                mp.SetCheck(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         MushroomPlatform mp = gameObject.GetComponentInParent<MushroomPlatform>();
 
-        if (mp != null)
-            mp.SetCheck(false);
+        if (collision.tag == "ground_detect")
+        {
+            if (mp != null)
+                mp.SetCheck(false);
+        }
     }
 }
