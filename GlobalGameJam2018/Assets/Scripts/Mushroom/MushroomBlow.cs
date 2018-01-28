@@ -73,6 +73,7 @@ public class MushroomBlow : MonoBehaviour
         timer.Start();
         anim = GetComponent<Animator>();
         anim.SetBool("blowing", true);
+        gameObject.GetComponentInChildren<Animator>().SetBool("wind", false);
     }
 
     public void Update()
@@ -104,7 +105,10 @@ public class MushroomBlow : MonoBehaviour
         else
         {
             if (timer.GetTime() > recharge_time - 0.7)
+            {
                 anim.SetBool("blowing", true);
+                gameObject.GetComponentInChildren<Animator>().SetBool("wind", false);
+            }
         }
 
     }
@@ -120,6 +124,7 @@ public class MushroomBlow : MonoBehaviour
                     timer.Start();
                     anim.SetBool("blowing", false);
                     anim.SetBool("shot", false);
+                    gameObject.GetComponentInChildren<Animator>().SetBool("wind", false);
                 }
                 break;
             case States.S_RECHARGE:
