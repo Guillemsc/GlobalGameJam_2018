@@ -6,19 +6,17 @@ using UnityEngine.UI;
 public class TitleScreenManager : MonoBehaviour
 {
     [SerializeField]
+    GameObject title;
+    [SerializeField]
     Button play;
     [SerializeField]
     Button credits;
     [SerializeField]
-    Button credits_back;
-    [SerializeField]
-    Text credits_text;
+    GameObject credits_group;
 
     public void Start()
     {
-        transform.GetChild(3).gameObject.SetActive(false);
-        credits_back.gameObject.SetActive(false);
-        credits_text.gameObject.SetActive(false);
+        Menu();
     }
 
     public void OnPlayClick()
@@ -27,26 +25,30 @@ public class TitleScreenManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Title_scene");
     }
 
-    public void OnCreditsClick()
+    private void Menu()
     {
-        transform.GetChild(2).gameObject.SetActive(false);
-        transform.GetChild(3).gameObject.SetActive(true);
+        title.SetActive(true);
+        credits_group.SetActive(false);
+        play.gameObject.SetActive(true);
+        credits.gameObject.SetActive(true);
+    }
 
+    private void Credits()
+    {
+        title.SetActive(false);
+        credits_group.SetActive(true);
         play.gameObject.SetActive(false);
         credits.gameObject.SetActive(false);
-        credits_back.gameObject.SetActive(true);
-        credits_text.gameObject.SetActive(true);
+    }
+
+    public void OnCreditsClick()
+    {
+        Credits();
     }
 
     public void OnCreditsBackClick()
     {
-        transform.GetChild(2).gameObject.SetActive(true);
-        transform.GetChild(3).gameObject.SetActive(false);
-
-        play.gameObject.SetActive(true);
-        credits.gameObject.SetActive(true);
-        credits_back.gameObject.SetActive(false);
-        credits_text.gameObject.SetActive(false);
+        Menu();
     }
 }
 
