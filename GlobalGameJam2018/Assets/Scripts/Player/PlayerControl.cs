@@ -76,7 +76,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        if (death_animation.GetTime() > 0.5f && animator.GetBool("death") == true)
+        if (death_animation.GetTime() > 0.4f && animator.GetBool("death") == true)
         {
             animator.SetBool("death", false);
             InstantiateMush();
