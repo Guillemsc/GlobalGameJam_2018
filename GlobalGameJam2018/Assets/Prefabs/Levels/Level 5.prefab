@@ -1328,6 +1328,24 @@ MonoBehaviour:
   max_x_velocity: 5
   spore_prefab: {fileID: 1846701889924426, guid: 12ea2e8a1b5b9f147a4f4cc312922f3d,
     type: 2}
+<<<<<<< HEAD
+=======
+--- !u!114 &114321977572392162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650044663922854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spore_shoot_force: 30
+  player_shoot_force: 6000
+  rotation_speed: 2
+  canon_pivot: {fileID: 1137579556998294}
+>>>>>>> 75085fa4fbbcf384048ac083908cc9a11165e6f5
 --- !u!114 &114363597576173096
 MonoBehaviour:
   m_ObjectHideFlags: 1
