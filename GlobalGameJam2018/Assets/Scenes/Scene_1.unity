@@ -379,7 +379,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489883423}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 475.5, y: 267.5, z: 0}
+  m_LocalPosition: {x: 447, y: 251.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014418177}
@@ -1220,10 +1220,6 @@ MonoBehaviour:
   - {fileID: 1844287436531142, guid: 31bcac3c05696f64fbf3eb007896581c, type: 2}
   - {fileID: 1005490486253684, guid: 950952a2d83f3f04593cbd682ade9ed3, type: 2}
   - {fileID: 1280949552521262, guid: 0a496cce27972f249aebf7202cba8711, type: 2}
-  - {fileID: 1904858366979632, guid: 10192434fb3434f438834d45a198b862, type: 2}
-  - {fileID: 1605432943711626, guid: ad1ac4ed6d1e0a94bb3b3397b864b2b8, type: 2}
-  - {fileID: 1779333386266744, guid: e6e8d852a7bad93438a5bae46aa84123, type: 2}
-  - {fileID: 1964905958283132, guid: 61360f2263c98be49b595c83c5071b07, type: 2}
   player: {fileID: 1701156295415486, guid: 92ef8337674f5284e929afd2d8d8889d, type: 2}
   curr_level: {fileID: 0}
   star_1: {fileID: 553955353}
