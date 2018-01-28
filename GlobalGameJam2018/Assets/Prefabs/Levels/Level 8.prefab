@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 251918355163634708}
   m_Layer: 10
   m_Name: plat2
-  m_TagString: Untagged
+  m_TagString: platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
