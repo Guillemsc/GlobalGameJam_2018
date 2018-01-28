@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float max_sides_velocity = 1.5f;
     [SerializeField] private float max_jump_sides_velocity = 1.5f;
 
-    private bool can_jump = false;
+    private bool can_jump = true;
 
     private Rigidbody2D rigid_body = null;
     private SpriteRenderer sprite_ren = null;
@@ -76,7 +76,21 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        if (death_animation.GetTime() > 0.4f && animator.GetBool("death") == true)
+        if(rigid_body.velocity.y > 0.1)
+        {
+            animator.SetBool("jump", true);
+        }
+        else
+        {
+            animator.SetBool("jump", false);
+        }
+
+        Debug.Log(rigid_body.velocity.y);
+
+        if (peck.GetTime() > 0.5f && animator.GetBool("peck"))
+            animator.SetBool("peck", false);
+
+        if (death_animation.GetTime() > 0.4f && animator.GetBool("death"))
         {
             animator.SetBool("death", false);
             InstantiateMush();
@@ -98,19 +112,21 @@ public class PlayerControl : MonoBehaviour
             animator.SetBool("respawn", false);
         }
 
-        if (peck.GetTime() > 0.5f && animator.GetBool("peck") == true)
-            animator.SetBool("peck", false);
-
         if (mushroom_in_head)
         {
             if (alive_in_head.GetTime() > time_alive_in_head && !animator.GetBool("death") )
             {
                 DeadAnim();
             }
-        }   
+        }
 
-        if (alive && !animator.GetBool("respawn"))
+        if (alive && !animator.GetBool("respawn") && !animator.GetBool("death") && !animator.GetBool("peck"))
         {
+            if (Input.GetKeyDown("w"))
+            {
+                Jump();
+            }
+
             if (bird_singing.GetTime() > random_sing)
             {
                 bird_singing.Start();
@@ -122,18 +138,13 @@ public class PlayerControl : MonoBehaviour
                 audio.Play();
             }
 
-            if (Input.GetKeyDown("w"))// || Input.GetAxis("Vertical")>0)
-            {
-                Jump();
-            }
-
             if (Input.GetKeyDown("j") || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 LookForMushroom();
             }
 
             animator.SetFloat("velocity_x_abs", Mathf.Abs(rigid_body.velocity.x));
-            
+
             if (Mathf.Abs(rigid_body.velocity.y) < 0.75 && animator.GetBool("jump") == true)
             {
                 animator.SetBool("jump", false);
@@ -143,7 +154,7 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate ()
     {
-        if(alive && !animator.GetBool("respawn"))
+        if(alive && !animator.GetBool("respawn") && !animator.GetBool("death") && !animator.GetBool("peck"))
         {
             if (Input.GetKey("a"))// || Input.GetAxis("Horizontal") < 0)
             {
@@ -223,14 +234,12 @@ public class PlayerControl : MonoBehaviour
     {
         if (can_jump)
         {
-           audio.clip = audios[4];
-           audio.Play();
+            audio.clip = audios[4];
+            audio.Play();
 
-           rigid_body.velocity = new Vector2(rigid_body.velocity.x, 0);
-           rigid_body.AddForce(new Vector2(0, jump_foce), ForceMode2D.Impulse);
-           can_jump = false;
-              
-            animator.SetBool("jump", true);
+            rigid_body.velocity = new Vector2(rigid_body.velocity.x, 0);
+            rigid_body.AddForce(new Vector2(0, jump_foce));
+            can_jump = false;
         }
     }
 
@@ -239,6 +248,15 @@ public class PlayerControl : MonoBehaviour
         if(rigid_body.velocity.y < 0 && Mathf.Abs(rigid_body.velocity.y) > max_fall_velocity)
         {
             rigid_body.velocity = new Vector2(rigid_body.velocity.x, -max_fall_velocity);
+
+            if (Mathf.Abs(rigid_body.velocity.y) > 0)
+            {
+                if(rigid_body.velocity.x > 0 && rigid_body.velocity.x > max_jump_sides_velocity)
+                    rigid_body.velocity = new Vector2(max_jump_sides_velocity, rigid_body.velocity.y);
+
+                if (rigid_body.velocity.x < 0 && rigid_body.velocity.x < -max_jump_sides_velocity)
+                    rigid_body.velocity = new Vector2(-max_jump_sides_velocity, rigid_body.velocity.y);
+            }
         }
     }
 
@@ -283,8 +301,11 @@ public class PlayerControl : MonoBehaviour
                 }
             }
 
-            animator.SetBool("peck", true);
-            peck.Start();
+            if (!animator.GetBool("peck"))
+            {
+                animator.SetBool("peck", true);
+                peck.Start();
+            }
         }
     }
 
@@ -327,6 +348,7 @@ public class PlayerControl : MonoBehaviour
     {
         death_animation.Start();
         animator.SetBool("death", true);
+        rigid_body.bodyType = RigidbodyType2D.Static;
     }
 
     private void RespawnAnim()
@@ -337,9 +359,11 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "spore")
+        if(collision.gameObject.tag == "spore" && alive)
         {
             DeadAnim();
+
+            Destroy(collision.gameObject);
         }
     }
 }

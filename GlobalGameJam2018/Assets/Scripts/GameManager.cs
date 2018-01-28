@@ -104,7 +104,13 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        LoadLevel(++curr_lvl);
+        if(curr_level.GetComponent<Level>().GetLevelNum() == levels.Length-1)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Title_scene");
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Scene_1");
+        }
+        else
+            LoadLevel(++curr_lvl);
     }
 
     public void ReplayLevel()

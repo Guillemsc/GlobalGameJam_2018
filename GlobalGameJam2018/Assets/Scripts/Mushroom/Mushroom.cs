@@ -69,13 +69,15 @@ public class Mushroom : MonoBehaviour
 
     private void SetDynamic()
     {
-        platform_effector.enabled = false;
+        if (platform_effector != null)
+            platform_effector.enabled = false;
         collider.usedByEffector = false;
     }
 
     private void SetStatic()
     {
-        platform_effector.enabled = true;
+        if(platform_effector != null)
+            platform_effector.enabled = true;
         collider.usedByEffector = true;
     }
 

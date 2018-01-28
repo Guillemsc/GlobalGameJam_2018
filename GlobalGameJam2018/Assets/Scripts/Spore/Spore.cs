@@ -47,12 +47,4 @@ public class Spore : MonoBehaviour {
                 rigid_body.velocity = new Vector2(-max_x_velocity, rigid_body.velocity.y);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "player")
-        {
-            Destroy(this.gameObject);
-        }
-    }
 }
