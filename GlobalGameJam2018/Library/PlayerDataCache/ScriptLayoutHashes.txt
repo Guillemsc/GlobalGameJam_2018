@@ -1,4 +1,38 @@
 WindowsStandalone
+<<<<<<< HEAD
+=======
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomStarTestColl
+1f9dfc14bbf548d256d3ee29ecf4a461 Assembly-CSharp.dll:.LocalizatedText
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GroundDetect
+19807ffd85a1f00aebb45d84619e77c3 Assembly-CSharp.dll:.Spore
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomCanonTestColl
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomBlowTestColl
+d3e6abd02138296a9312fb9794f9e9ee Assembly-CSharp.dll:.Mushroom
+dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
+85677e9a5a893eba8fc81b3eb2d48653 Assembly-CSharp.dll:.MushroomPlatform
+d6df133bb74820a8c1153e0d6601b51d Assembly-CSharp.dll:.SporeOscillation
+ec6da707cc5d3cd813a74ceaef937fd3 Assembly-CSharp.dll:.GameManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GoToWeb
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomStar
+cd3239eec507635083650467d1f450f3 Assembly-CSharp.dll:.TitleScreenManager
+7712c64f7bd87b50698fe3dbc32fc284 Assembly-CSharp.dll:.Level
+a9d7a56bc4b70a90f34c3756095f6dc1 Assembly-CSharp.dll:.MushroomCanon
+fd0b7e68216089bb2d84049dbc02c062 Assembly-CSharp.dll:.PlayerControl
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomPlatformTestColl
+4a3637891edb4903f0d58b882f64c3cc Assembly-CSharp.dll:.MushroomBlow
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LocalizationManager
+bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
+c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
+45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
+463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
+9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
+64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
+6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
+af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+>>>>>>> e0e1841dce2a215a62123cf920d9f750903a8bac
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -6,6 +40,18 @@ WindowsStandalone
 c28edace1fdf0563f7e72075531c5744 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioPlayableAsset
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioTrack
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.BasicPlayableBehaviour
+<<<<<<< HEAD
+=======
+6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
+6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
+af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
+970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
+8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
+54f0e6ddfd6c466a1673d6ad5af5ddcd UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
+c28edace1fdf0563f7e72075531c5744 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioPlayableAsset
+6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioTrack
+>>>>>>> e0e1841dce2a215a62123cf920d9f750903a8bac
 ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.ControlPlayableAsset
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.ControlTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
