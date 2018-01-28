@@ -1576,12 +1576,12 @@ MonoBehaviour:
   level_num: 8
   finish_star: {fileID: 1298397681998516}
   camera_pos: {x: -1.635, y: 0.03}
-  three_stars_deaths: 3
-  two_and_half_stars_deaths: 4
-  two_stars_deaths: 5
-  one_and_half_stars_deaths: 6
-  one_star_deaths: 7
-  half_star_deaths: 8
+  three_stars_deaths: 6
+  two_and_half_stars_deaths: 7
+  two_stars_deaths: 8
+  one_and_half_stars_deaths: 9
+  one_star_deaths: 10
+  half_star_deaths: 11
 --- !u!212 &212178392849215228
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1835,7 +1835,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9b82972384e7b9c41b7d6b273882ad25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
