@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1116144244548358}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
@@ -1273,17 +1273,7 @@ MonoBehaviour:
   spore_shoot_force: 30
   player_shoot_force: 6000
   rotation_speed: 2
-  canon_pivot: {fileID: 1473502788475456}
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1403371695305112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b7c8ff3630ffdb459948ebbb40de405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  canon_pivot: {fileID: 0}
 --- !u!114 &114574696642071220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1310,12 +1300,12 @@ MonoBehaviour:
   level_num: 5
   finish_star: {fileID: 1003271673572782}
   camera_pos: {x: -0.64, y: 0.83}
-  three_stars_deaths: 1
-  two_and_half_stars_deaths: 2
-  two_stars_deaths: 3
-  one_and_half_stars_deaths: 4
-  one_star_deaths: 5
-  half_star_deaths: 6
+  three_stars_deaths: 4
+  two_and_half_stars_deaths: 5
+  two_stars_deaths: 6
+  one_and_half_stars_deaths: 7
+  one_star_deaths: 8
+  half_star_deaths: 9
 --- !u!114 &114897980490876956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1356,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spore_shoot_force: 60
+  spore_shoot_force: 30
   player_shoot_force: 6000
   rotation_speed: 2
   canon_pivot: {fileID: 1903476172574074}

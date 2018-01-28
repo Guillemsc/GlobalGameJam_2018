@@ -1282,12 +1282,12 @@ MonoBehaviour:
   level_num: 7
   finish_star: {fileID: 1612588321264066}
   camera_pos: {x: -0.64, y: 0.83}
-  three_stars_deaths: 3
-  two_and_half_stars_deaths: 4
-  two_stars_deaths: 5
-  one_and_half_stars_deaths: 6
-  one_star_deaths: 7
-  half_star_deaths: 8
+  three_stars_deaths: 4
+  two_and_half_stars_deaths: 5
+  two_stars_deaths: 6
+  one_and_half_stars_deaths: 7
+  one_star_deaths: 8
+  half_star_deaths: 9
 --- !u!114 &114240067612200980
 MonoBehaviour:
   m_ObjectHideFlags: 1
