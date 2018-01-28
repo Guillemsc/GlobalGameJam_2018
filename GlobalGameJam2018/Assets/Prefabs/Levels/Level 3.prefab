@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spore_shoot_force: 60
+  spore_shoot_force: 30
   player_shoot_force: 6000
   rotation_speed: 2
   canon_pivot: {fileID: 1736393410904216}
@@ -1313,18 +1313,18 @@ MonoBehaviour:
   level_num: 2
   finish_star: {fileID: 1270287639866978}
   camera_pos: {x: -1.605, y: 0.03}
-  three_stars_deaths: 1
-  two_and_half_stars_deaths: 2
-  two_stars_deaths: 3
-  one_and_half_stars_deaths: 4
-  one_star_deaths: 5
-  half_star_deaths: 6
+  three_stars_deaths: 5
+  two_and_half_stars_deaths: 6
+  two_stars_deaths: 7
+  one_and_half_stars_deaths: 8
+  one_star_deaths: 9
+  half_star_deaths: 10
 --- !u!114 &114835806060772586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1606223336712672}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a01ce0ac22619ce45a22d3a5d5dfc406, type: 3}
@@ -1333,7 +1333,7 @@ MonoBehaviour:
   spore_shoot_force: 30
   player_shoot_force: 6000
   rotation_speed: 2
-  canon_pivot: {fileID: 1126118577587542}
+  canon_pivot: {fileID: 0}
 --- !u!114 &114900261982895546
 MonoBehaviour:
   m_ObjectHideFlags: 1
