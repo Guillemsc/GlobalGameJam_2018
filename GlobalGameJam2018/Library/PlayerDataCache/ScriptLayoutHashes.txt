@@ -148,7 +148,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 a9d7a56bc4b70a90f34c3756095f6dc1 Assembly-CSharp.dll:.MushroomCanon
-30c7e2d26c9986e2f527b97627239727 Assembly-CSharp.dll:.PlayerControl
+fd0b7e68216089bb2d84049dbc02c062 Assembly-CSharp.dll:.PlayerControl
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MushroomPlatformTestColl
 4a3637891edb4903f0d58b882f64c3cc Assembly-CSharp.dll:.MushroomBlow
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LocalizationManager
