@@ -27,14 +27,16 @@ public class MushroomPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject go = collision.gameObject;
+        Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-        Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
-
-        if(rb != null && check)
+        if (rb != null && check)
         {
-            Vector2 jump = gameObject.transform.up * force;
-            rb.AddForce(jump);
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+
+            Vector2 jump = gameObject.transform.up.normalized * force;
+            rb.AddForce(jump, ForceMode2D.Force);
+
+            check = false;
         }
     }
 }
