@@ -1259,8 +1259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aed00d8922f8a744891473c6688d956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
 --- !u!114 &114446377227658798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1276,7 +1274,6 @@ MonoBehaviour:
   player_shoot_force: 6000
   rotation_speed: 2
   canon_pivot: {fileID: 1473502788475456}
---- !u!114 &114537406386871932
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1287,7 +1284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7c8ff3630ffdb459948ebbb40de405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 75085fa4fbbcf384048ac083908cc9a11165e6f5
 --- !u!114 &114574696642071220
 MonoBehaviour:
   m_ObjectHideFlags: 1

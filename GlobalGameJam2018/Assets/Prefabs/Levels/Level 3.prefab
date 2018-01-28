@@ -1319,8 +1319,6 @@ MonoBehaviour:
   one_and_half_stars_deaths: 4
   one_star_deaths: 5
   half_star_deaths: 6
-<<<<<<< HEAD
-=======
 --- !u!114 &114835806060772586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1336,7 +1334,6 @@ MonoBehaviour:
   player_shoot_force: 6000
   rotation_speed: 2
   canon_pivot: {fileID: 1126118577587542}
->>>>>>> 75085fa4fbbcf384048ac083908cc9a11165e6f5
 --- !u!114 &114900261982895546
 MonoBehaviour:
   m_ObjectHideFlags: 1
