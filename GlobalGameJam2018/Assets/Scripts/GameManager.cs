@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] levels;
     [SerializeField] private GameObject player;
 
-    GameObject curr_level = null;
+    public GameObject curr_level = null;
     GameObject curr_player = null;
     GameObject curr_star = null;
 

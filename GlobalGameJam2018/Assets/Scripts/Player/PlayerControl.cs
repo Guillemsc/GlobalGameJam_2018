@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] private float acceleration = 500f;
+    [SerializeField] private float acceleration = 400f;
     [SerializeField] private float jump_foce = 70.1f;
     [SerializeField] private float break_force = 200.0f;
 
@@ -35,8 +35,14 @@ public class PlayerControl : MonoBehaviour
 
     public bool alive = true;
 
+    Vector3 respawn_position = Vector3.zero;
+
     Timer peck = new Timer();
+    Timer death_animation = new Timer();
     Timer death = new Timer();
+    Timer appear_animation = new Timer();
+
+    private GameManager manager = null;
 
     enum audioclips
     {
@@ -51,6 +57,8 @@ public class PlayerControl : MonoBehaviour
     private AudioSource audio = null;
     private Animator animator = null;
 
+    public GameObject appear_death_go = null;
+
     private void Awake()
     {
         rigid_body = gameObject.GetComponent<Rigidbody2D>();
@@ -58,6 +66,7 @@ public class PlayerControl : MonoBehaviour
         player_mushroom = GameObject.FindGameObjectWithTag("player_mushroom");
         animator = gameObject.GetComponentInChildren<Animator>();
         sprite_ren = gameObject.GetComponentInChildren<SpriteRenderer>();
+        manager = GameObject.FindGameObjectWithTag("game_manager").GetComponent<GameManager>();
     }
 
     private void Start ()
@@ -82,13 +91,17 @@ public class PlayerControl : MonoBehaviour
             if (alive_in_head.GetTime() > time_alive_in_head)
             {
                 InstantiateMush();
-                animator.SetBool("death", true);
-                death.Start();
+                // enable GO with the animation
+                appear_death_go.SetActive(true);
+                appear_death_go.transform.position = gameObject.transform.position;
+                appear_death_go.gameObject.transform.parent = null;
+                appear_death_go.GetComponent<Animator>().SetBool("death", true);
+                death_animation.Start();
 
                 mushroom_in_head = false;
                 alive = false;
             }
-        }
+        }   
 
         if (alive)
         {
@@ -103,12 +116,12 @@ public class PlayerControl : MonoBehaviour
                 audio.Play();
             }
 
-            if (Input.GetKeyDown("w") || Input.GetAxis("Vertical")>0)
+            if (Input.GetKeyDown("w"))// || Input.GetAxis("Vertical")>0)
             {
                 Jump();
             }
 
-            if (Input.GetKeyDown("j")|| Input.GetKeyDown(KeyCode.Joystick1Button0))
+            if (Input.GetKeyDown("j") || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 LookForMushroom();
             }
@@ -120,13 +133,33 @@ public class PlayerControl : MonoBehaviour
                 animator.SetBool("jump", false);
             }
         }
+
+        
+        if (appear_death_go.GetComponent<Animator>().GetBool("death") && death_animation.GetTime() > 0.5f)
+        {
+            appear_death_go.GetComponent<Animator>().SetBool("death", false);
+            appear_animation.Start();
+            appear_death_go.GetComponent<Animator>().SetBool("appear", true);
+            appear_death_go.transform.position = respawn_position;
+        }
+
+        if (appear_death_go.GetComponent<Animator>().GetBool("appear") && appear_animation.GetTime() > 0.5f)
+        {
+            //gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
+
+            appear_death_go.GetComponent<Animator>().SetBool("appear", false);
+            appear_death_go.transform.position = respawn_position;
+            appear_death_go.SetActive(false);
+            Appear();
+            alive = true;
+        }
     }
 
     private void FixedUpdate ()
     {
         if(alive)
         {
-            if (Input.GetKey("a") || Input.GetAxis("Horizontal") < 0)
+            if (Input.GetKey("a"))// || Input.GetAxis("Horizontal") < 0)
             {
                 MoveLeft();
 
@@ -137,7 +170,7 @@ public class PlayerControl : MonoBehaviour
                 rigid_body.AddForce(new Vector2(break_force, 0));
             }
 
-            if (Input.GetKey("d") || Input.GetAxis("Horizontal") > 0)
+            if (Input.GetKey("d"))// || Input.GetAxis("Horizontal") > 0)
             {
                 MoveRight();
 
@@ -179,9 +212,11 @@ public class PlayerControl : MonoBehaviour
 
     public void Respawn(Vector3 pos)
     {
-        Appear();
+        gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        respawn_position = pos;
+        //Appear();
         player_mushroom.SetActive(false);
-        alive = true;
+        //alive = true;
         gameObject.transform.position = pos;
     }
 
@@ -275,13 +310,13 @@ public class PlayerControl : MonoBehaviour
         switch (type_in_head)
         {
             case Mushroom.MushroomType.MT_CANON:
-                Instantiate(canon_prefab, gameObject.transform.position, Quaternion.identity);
+                Instantiate(canon_prefab, gameObject.transform.position, Quaternion.identity, manager.curr_level.transform);
                 break;
             case Mushroom.MushroomType.MT_PLATFORM:
-                Instantiate(platform_prefab, gameObject.transform.position, Quaternion.identity);
+                Instantiate(platform_prefab, gameObject.transform.position, Quaternion.identity, manager.curr_level.transform);
                 break;
             case Mushroom.MushroomType.MT_WIND:
-                Instantiate(blow_prefab, gameObject.transform.position, Quaternion.identity);
+                Instantiate(blow_prefab, gameObject.transform.position, Quaternion.identity, manager.curr_level.transform);
                 break;
 
         }
@@ -299,8 +334,13 @@ public class PlayerControl : MonoBehaviour
     {
         if(collision.gameObject.tag == "spore")
         {
-            animator.SetBool("death", true);
-            death.Start();
+            appear_death_go.SetActive(true);
+            appear_death_go.transform.position = gameObject.transform.position;
+            appear_death_go.gameObject.transform.parent = null;
+            appear_death_go.GetComponent<Animator>().SetBool("death", true);
+            death_animation.Start();
+
+            alive = false;
         }
     }
 }
