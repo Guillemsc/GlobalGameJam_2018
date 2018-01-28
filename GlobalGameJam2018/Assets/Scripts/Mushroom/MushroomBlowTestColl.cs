@@ -8,6 +8,11 @@ public class MushroomBlowTestColl : MonoBehaviour
     {
         MushroomBlow mp = gameObject.GetComponentInParent<MushroomBlow>();
 
+        if(collision.gameObject.tag == "player")
+        {
+            collision.gameObject.GetComponent<PlayerControl>().SetCanJump(true);
+        }
+
         if (mp != null)
             mp.SetBlow(collision.gameObject);
     }
