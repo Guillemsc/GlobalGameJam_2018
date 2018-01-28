@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] private float acceleration = 500f;
+    [SerializeField] private float acceleration = 400f;
     [SerializeField] private float jump_foce = 70.1f;
     [SerializeField] private float break_force = 200.0f;
 
@@ -42,6 +42,8 @@ public class PlayerControl : MonoBehaviour
     Timer death = new Timer();
     Timer appear_animation = new Timer();
 
+    private GameManager manager = null;
+
     enum audioclips
     {
         bird_1,
@@ -64,6 +66,7 @@ public class PlayerControl : MonoBehaviour
         player_mushroom = GameObject.FindGameObjectWithTag("player_mushroom");
         animator = gameObject.GetComponentInChildren<Animator>();
         sprite_ren = gameObject.GetComponentInChildren<SpriteRenderer>();
+        manager = GameObject.FindGameObjectWithTag("game_manager").GetComponent<GameManager>();
     }
 
     private void Start ()
@@ -307,13 +310,13 @@ public class PlayerControl : MonoBehaviour
         switch (type_in_head)
         {
             case Mushroom.MushroomType.MT_CANON:
-                Instantiate(canon_prefab, gameObject.transform.position, Quaternion.identity);
+                Instantiate(canon_prefab, gameObject.transform.position, Quaternion.identity, manager.curr_level.transform);
                 break;
             case Mushroom.MushroomType.MT_PLATFORM:
-                Instantiate(platform_prefab, gameObject.transform.position, Quaternion.identity);
+                Instantiate(platform_prefab, gameObject.transform.position, Quaternion.identity, manager.curr_level.transform);
                 break;
             case Mushroom.MushroomType.MT_WIND:
-                Instantiate(blow_prefab, gameObject.transform.position, Quaternion.identity);
+                Instantiate(blow_prefab, gameObject.transform.position, Quaternion.identity, manager.curr_level.transform);
                 break;
 
         }
