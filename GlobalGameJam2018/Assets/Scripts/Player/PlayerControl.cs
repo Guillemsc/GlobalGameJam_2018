@@ -334,8 +334,13 @@ public class PlayerControl : MonoBehaviour
     {
         if(collision.gameObject.tag == "spore")
         {
-            animator.SetBool("death", true);
-            death.Start();
+            appear_death_go.SetActive(true);
+            appear_death_go.transform.position = gameObject.transform.position;
+            appear_death_go.gameObject.transform.parent = null;
+            appear_death_go.GetComponent<Animator>().SetBool("death", true);
+            death_animation.Start();
+
+            alive = false;
         }
     }
 }
