@@ -205,6 +205,7 @@ public class PlayerControl : MonoBehaviour
         Disappear();
         alive = false;
         mushroom_in_head = false;
+        wait_dead = false;
     }
 
     public void Respawn(Vector3 pos)
@@ -301,7 +302,7 @@ public class PlayerControl : MonoBehaviour
                 }
             }
 
-            if (!animator.GetBool("peck"))
+            if (alive && !animator.GetBool("respawn") && !animator.GetBool("death") && !animator.GetBool("peck"))
             {
                 animator.SetBool("peck", true);
                 peck.Start();
@@ -346,8 +347,12 @@ public class PlayerControl : MonoBehaviour
 
     private void DeadAnim()
     {
-        death_animation.Start();
-        animator.SetBool("death", true);
+        if (!animator.GetBool("death"))
+        {
+            death_animation.Start();
+            animator.SetBool("death", true);
+        }
+
         rigid_body.bodyType = RigidbodyType2D.Static;
     }
 

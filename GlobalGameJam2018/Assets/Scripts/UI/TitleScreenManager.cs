@@ -19,6 +19,15 @@ public class TitleScreenManager : MonoBehaviour
         Menu();
     }
 
+    public void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+    }
+
     public void OnPlayClick()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Scene_1");

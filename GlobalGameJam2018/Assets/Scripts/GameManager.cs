@@ -47,8 +47,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         // Player dies
-        if(curr_player != null && curr_level != null)
+        if (curr_player != null && curr_level != null)
         {
             if(curr_player.GetComponent<PlayerControl>().IsDead())
             {
